@@ -6,28 +6,80 @@
 <title>Taxi & Fly — Athens Airport Taxi</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0b0c10;
-  color:#fff;
-}
-.wrap{max-width:1000px;margin:auto;padding:20px;}
-.hero img{width:100%;height:420px;object-fit:cover;border-radius:20px;}
-.section{margin-top:30px;}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.card img{width:100%;border-radius:16px;}
-.btn{
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:bold;
-  margin:6px;
-  display:inline-block;
-}
-.call{background:#7c5cff;color:white;}
-.wa{background:#25D366;color:white;}
-.center{text-align:center;}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b0c10;
+    color:#fff;
+  }
+  .wrap{max-width:1000px;margin:auto;padding:20px;}
+  .hero img{width:100%;height:420px;object-fit:cover;border-radius:20px;}
+  .section{margin-top:30px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:14px;}
+  .card img{width:100%;border-radius:16px;display:block;}
+  .btn{
+    padding:12px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:6px;
+    display:inline-block;
+  }
+  .call{background:#7c5cff;color:#0b0c10;}
+  .wa{background:#25D366;color:#0b0c10;}
+  .center{text-align:center;}
+  .muted{opacity:.85}
+
+  /* Download buttons */
+  .stores{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+  .storeBtn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:12px 16px;border-radius:14px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.06);
+    color:#fff;text-decoration:none;font-weight:800;
+  }
+  .storeBtn:hover{background:rgba(255,255,255,.10)}
+  .storeIcon{font-size:18px;line-height:1}
+
+  /* Floating WhatsApp button */
+  .fab{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:9999;
+    width:58px;height:58px;
+    border-radius:999px;
+    display:flex;align-items:center;justify-content:center;
+    background:#25D366;
+    color:#0b0c10;
+    box-shadow:0 14px 30px rgba(0,0,0,.45);
+    text-decoration:none;
+    font-weight:900;
+    border:1px solid rgba(255,255,255,.25);
+  }
+  .fab span{font-size:22px}
+  .fabLabel{
+    position:fixed;
+    right:86px;
+    bottom:30px;
+    z-index:9999;
+    background:rgba(0,0,0,.65);
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+    padding:10px 12px;
+    border-radius:14px;
+    font-weight:800;
+    font-size:13px;
+    backdrop-filter: blur(6px);
+  }
+
+  /* Responsive */
+  @media (max-width:820px){
+    .grid{grid-template-columns:1fr;}
+    .hero img{height:360px;}
+  }
 </style>
 </head>
 
@@ -35,52 +87,91 @@ body{
 <div class="wrap">
 
 <h1 class="center">Taxi & Fly</h1>
-<p class="center">Athens → Airport Taxi Transfers • 24/7 Service</p>
+<p class="center muted">Athens → Airport Taxi Transfers • 24/7 Service</p>
 
 <div class="center">
-<a href="tel:+306974450008" class="btn call">Call Now</a>
-<a href="https://wa.me/306974450008" class="btn wa">WhatsApp</a>
+  <a href="tel:+306974450008" class="btn call">Call Now</a>
+  <a href="https://wa.me/306974450008" class="btn wa">WhatsApp</a>
 </div>
 
 <!-- HERO -->
 <section class="hero section">
-<img src="images%20(1).jpg" alt="Taxi">
+  <img src="images%20(1).jpg" alt="Taxi">
 </section>
 
 <!-- AIRPORT -->
 <section class="section" style="position:relative;border-radius:20px;overflow:hidden;">
-<img src="athens-international-airport.jpg"
-     style="width:100%;height:360px;object-fit:cover;">
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-<h2 style="background:rgba(0,0,0,.6);padding:16px 24px;border-radius:12px;">
-Athens Airport Transfers (ATH)
-</h2>
-</div>
+  <img src="athens-international-airport.jpg"
+       alt="Athens International Airport"
+       style="width:100%;height:360px;object-fit:cover;display:block;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.70));"></div>
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center;">
+    <div>
+      <h2 style="margin:0 0 8px;background:rgba(0,0,0,.55);padding:14px 18px;border-radius:14px;">
+        Athens Airport Transfers (ATH)
+      </h2>
+      <div class="muted">Reliable taxi service to Athens International Airport – 24/7 booking</div>
+    </div>
+  </div>
 </section>
 
 <!-- TAXI GALLERY -->
 <section class="section">
-<h2 class="center">Our Taxi Fleet</h2>
-<div class="grid">
-<div class="card">
-<img src="images%20(2).jpg">
-</div>
+  <h2 class="center">Our Taxi Fleet</h2>
 
-<div class="card">
-<img src="images%20(3).jpg">
-</div>
+  <div class="grid">
+    <div class="card">
+      <img src="images%20(2).jpg" alt="Yellow taxis fleet">
+    </div>
 
-<div class="card center">
-<b>Taxi & Fly</b>
-<p>24/7 Athens Airport Transfers</p>
-</div>
-</div>
+    <div class="card">
+      <img src="images%20(3).jpg" alt="Yellow taxi car">
+    </div>
+
+    <div class="card center">
+      <b style="font-size:18px;">Taxi & Fly</b>
+      <p class="muted" style="margin:10px 0 0;">24/7 Athens Airport Transfers</p>
+      <p class="muted" style="margin:8px 0 0;">Call or WhatsApp for instant confirmation.</p>
+    </div>
+  </div>
 </section>
 
-<footer class="section center">
-© Taxi & Fly • taxiandfly.com
+<!-- BOOK NOW -->
+<section class="section">
+  <div class="card center">
+    <h2 style="margin:6px 0 10px;">Book Your Taxi</h2>
+    <p class="muted">Call or WhatsApp for instant confirmation.</p>
+
+    <div style="margin-top:12px;">
+      <a href="tel:+306974450008" class="btn call">Call Now</a>
+      <a href="https://wa.me/306974450008" class="btn wa">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="section center muted">
+  © Taxi & Fly • taxiandfly.com
 </footer>
 
 </div>
+
+<!-- Floating WhatsApp -->
+<a class="fab" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span>✆</span>
+</a>
+<div class="fabLabel">Chat on WhatsApp</div>
+
+<script>
+  // OPTIONAL: Όταν έχεις App Store link, βάλε το εδώ και θα εμφανιστεί το κουμπί.
+  const APP_STORE_LINK = ""; // π.χ. "https://apps.apple.com/app/id1234567890"
+  if (APP_STORE_LINK) {
+    const b = document.getElementById("appStoreBtn");
+    b.href = APP_STORE_LINK;
+    b.style.display = "inline-flex";
+  }
+</script>
+
 </body>
 </html>
+
+
