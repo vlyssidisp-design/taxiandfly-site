@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Taxi & Fly | Μεταφορά από όλη την Αθήνα προς Αεροδρόμιο (ATH)</title>
-  <meta name="description" content="Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Ελ. Βενιζέλος (ATH). 24/7. Επικοινωνία με τηλέφωνο, WhatsApp ή Viber." />
+  <meta name="description" content="Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Ελ. Βενιζέλος (ATH). 24/7. Κλήση, WhatsApp, Viber ή Email." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://taxiandfly.com/gr/" />
 
@@ -17,18 +17,12 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Taxi & Fly | Από Αθήνα → Αεροδρόμιο (ATH)" />
-  <meta property="og:description" content="Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Ελ. Βενιζέλος (ATH). 24/7. Τηλέφωνο, WhatsApp ή Viber." />
+  <meta property="og:description" content="Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Ελ. Βενιζέλος (ATH). 24/7. Κλήση, WhatsApp, Viber ή Email." />
   <meta property="og:url" content="https://taxiandfly.com/gr/" />
   <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg" />
   <meta property="og:locale" content="el_GR" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Taxi & Fly | Από Αθήνα → Αεροδρόμιο (ATH)" />
-  <meta name="twitter:description" content="Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Ελ. Βενιζέλος (ATH). 24/7." />
-  <meta name="twitter:image" content="https://taxiandfly.com/images%20(1).jpg" />
-
-  <!-- Schema (JSON-LD) -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -36,374 +30,131 @@
     "name":"Taxi & Fly",
     "url":"https://taxiandfly.com/gr/",
     "telephone":"+306974450008",
-    "areaServed":{
-      "@type":"City",
-      "name":"Αθήνα"
-    },
-    "serviceArea":{
-      "@type":"AdministrativeArea",
-      "name":"Αθήνα (Όλες οι περιοχές)"
-    },
-    "description":"Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Αθηνών (ATH). Διαθέσιμοι 24/7. Επικοινωνία με τηλέφωνο, WhatsApp ή Viber.",
+    "areaServed":{"@type":"City","name":"Αθήνα"},
+    "description":"Μεταφορά με ταξί από όλες τις περιοχές της Αθήνας προς το Αεροδρόμιο Αθηνών (ATH). Διαθέσιμοι 24/7. Επικοινωνία με τηλέφωνο, WhatsApp, Viber ή email.",
     "image":[
       "https://taxiandfly.com/images%20(1).jpg",
       "https://taxiandfly.com/images%20(2).jpg",
       "https://taxiandfly.com/images%20(3).jpg",
       "https://taxiandfly.com/athens-international-airport.jpg"
     ],
-    "sameAs":[
-      "https://wa.me/306974450008"
-    ]
+    "sameAs":["https://wa.me/306974450008"]
   }
   </script>
 
   <style>
+    /* ίδιο styling με EN για συνέπεια */
     :root{
-      --bg1:#fff7e6;
-      --bg2:#ffffff;
-      --card:#ffffff;
-      --text:#141414;
-      --muted:#555;
-      --border:rgba(0,0,0,.10);
-      --shadow: 0 14px 40px rgba(0,0,0,.10);
-      --yellow:#ffd400;
-      --orange:#ff8c00;
-      --whatsapp:#25D366;
-      --viber:#7C529E;
-      --radius:18px;
-      --max:1100px;
+      --bg1:#fff7e6; --bg2:#ffffff; --card:#ffffff;
+      --text:#141414; --muted:#555; --border:rgba(0,0,0,.10);
+      --shadow:0 14px 40px rgba(0,0,0,.10);
+      --yellow:#ffd400; --orange:#ff8c00; --whatsapp:#25D366; --viber:#7C529E;
+      --radius:18px; --max:1100px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: linear-gradient(180deg,var(--bg1),var(--bg2));
-    }
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--bg1),var(--bg2))}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:22px}
 
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.75);
-      border-bottom:1px solid var(--border);
-    }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      max-width:var(--max); margin:0 auto; padding:12px 22px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:900; letter-spacing:.2px;
-    }
-    .logo{
-      width:38px; height:38px; border-radius:12px;
-      background: radial-gradient(circle at 30% 30%, #fff, #ffe27a 35%, #ffd400 70%);
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
-      display:grid; place-items:center;
-      font-weight:900;
-    }
-    .nav{
-      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
-      font-size:14px;
-    }
-    .nav a{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-    }
-    .nav a:hover{
-      border-color: var(--border);
-      background: rgba(255,255,255,.7);
-    }
-    .lang-switch a{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-weight:700;
-      font-size:14px;
-    }
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(255,255,255,.78);border-bottom:1px solid var(--border)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--max);margin:0 auto;padding:12px 22px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
+    .logo{width:38px;height:38px;border-radius:12px;background:radial-gradient(circle at 30% 30%,#fff,#ffe27a 35%,#ffd400 70%);border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 18px rgba(0,0,0,.08);display:grid;place-items:center;font-weight:900}
+    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px}
+    .nav a{padding:8px 10px;border-radius:999px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--border);background:rgba(255,255,255,.8)}
+    .lang-switch a{padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:800;font-size:14px}
 
-    .hero{
-      margin-top:18px;
-      border-radius: 26px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow: var(--shadow);
-      background:#000;
-      position:relative;
-    }
-    .hero img{
-      width:100%;
-      height:440px;
-      object-fit:cover;
-      opacity:.95;
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.40) 35%, rgba(0,0,0,.65) 100%);
-      pointer-events:none;
-    }
-    .hero-content{
-      position:absolute; inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:22px;
-      color:#fff;
-      z-index:2;
-    }
-    .hero-box{
-      width:min(860px, 100%);
-      padding:18px 16px;
-    }
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.22);
-      font-weight:700;
-      font-size:13px;
-    }
-    h1{
-      margin:14px 0 8px;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height:1.05;
-      letter-spacing:-.5px;
-    }
-    .sub{
-      margin:0 auto 16px;
-      max-width:700px;
-      font-size:16px;
-      color: rgba(255,255,255,.92);
-    }
-    .cta{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:800;
-      cursor:pointer;
-      transition: transform .08s ease, background .2s ease;
-      min-width: 150px;
-    }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.18); }
-    .btn.primary{ background: rgba(255,212,0,.95); color:#111; border-color: rgba(255,212,0,.5);}
-    .btn.wa{ background: rgba(37,211,102,.95); color:#08150d; border-color: rgba(37,211,102,.45);}
-    .btn.vb{ background: rgba(124,82,158,.95); color:#fff; border-color: rgba(124,82,158,.45);}
+    .hero{margin-top:18px;border-radius:26px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#000;position:relative}
+    .hero img{width:100%;height:440px;object-fit:cover;opacity:.95}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.40) 35%,rgba(0,0,0,.68) 100%);pointer-events:none}
+    .hero-content{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;color:#fff;z-index:2}
+    .hero-box{width:min(860px,100%);padding:18px 16px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-weight:800;font-size:13px}
+    h1{margin:14px 0 8px;font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.5px}
+    .sub{margin:0 auto 16px;max-width:700px;font-size:16px;color:rgba(255,255,255,.92)}
+    .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.12);color:#fff;font-weight:900;cursor:pointer;transition:transform .08s ease,background .2s ease;min-width:150px}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.18)}
+    .btn.primary{background:rgba(255,212,0,.95);color:#111;border-color:rgba(255,212,0,.5)}
+    .btn.wa{background:rgba(37,211,102,.95);color:#08150d;border-color:rgba(37,211,102,.45)}
+    .btn.vb{background:rgba(124,82,158,.95);color:#fff;border-color:rgba(124,82,158,.45)}
 
-    section{ padding:26px 0; }
-    .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      margin-bottom:14px;
-    }
-    .section-title h2{ margin:0; font-size:26px; letter-spacing:-.3px; }
-    .section-title p{ margin:0; color:var(--muted); max-width:560px; font-size:14px; }
+    section{padding:26px 0}
+    .section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .section-title h2{margin:0;font-size:26px;letter-spacing:-.3px}
+    .section-title p{margin:0;color:var(--muted);max-width:560px;font-size:14px}
 
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      overflow:hidden;
-    }
-    .card-pad{ padding:16px; }
-    .card h3{ margin:0 0 6px; font-size:16px;}
-    .card p{ margin:0; color:var(--muted); font-size:14px; line-height:1.5;}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.06);overflow:hidden}
+    .card-pad{padding:16px}
+    .card h3{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
 
-    .icon{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(180deg, #fff, #ffeaa0);
-      border:1px solid rgba(0,0,0,.08);
-      display:grid; place-items:center;
-      font-weight:900;
-    }
-    .row{ display:flex; gap:12px; align-items:flex-start; }
+    .icon{width:40px;height:40px;border-radius:14px;background:linear-gradient(180deg,#fff,#ffeaa0);border:1px solid rgba(0,0,0,.08);display:grid;place-items:center;font-weight:900}
+    .row{display:flex;gap:12px;align-items:flex-start}
 
-    .airport{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .airport .photo{
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      background:#fff;
-    }
-    .airport .photo img{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-    }
+    .airport{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
+    .airport .photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.06);background:#fff}
+    .airport .photo img{width:100%;height:320px;object-fit:cover}
 
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .gallery figure{
-      margin:0;
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      background:#fff;
-    }
-    .gallery img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
-    .caption{
-      padding:10px 12px;
-      font-size:13px;
-      color:var(--muted);
-    }
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery figure{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.06);background:#fff}
+    .gallery img{width:100%;height:220px;object-fit:cover}
+    .caption{padding:10px 12px;font-size:13px;color:var(--muted)}
 
-    .app-row{ display:flex; gap:12px; flex-wrap:wrap; }
-    .store-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-weight:800;
-      min-width: 210px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-    }
-    .store-btn.disabled{ opacity:.55; cursor:not-allowed; }
-    .hint{ margin-top:8px; color:var(--muted); font-size:13px; }
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .contact-actions .btn{border-color:var(--border);background:#fff;color:#111;box-shadow:0 10px 30px rgba(0,0,0,.06);min-width:160px}
+    .contact-actions .btn:hover{background:#fafafa}
+    .contact-actions .btn.call{background:var(--yellow)}
+    .contact-actions .btn.wa{background:var(--whatsapp);color:#08150d}
+    .contact-actions .btn.vb{background:var(--viber);color:#fff}
 
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    .contact-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
-    .contact-actions .btn{
-      border-color: var(--border);
-      background:#fff;
-      color:#111;
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      min-width: 160px;
-    }
-    .contact-actions .btn:hover{ background:#fafafa; }
-    .contact-actions .btn.wa{ background: var(--whatsapp); color:#08150d; border-color: rgba(0,0,0,.08); }
-    .contact-actions .btn.vb{ background: var(--viber); color:#fff; border-color: rgba(0,0,0,.08); }
-    .contact-actions .btn.call{ background: var(--yellow); }
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field label{font-size:13px;font-weight:900;color:#222}
+    .field input{padding:12px;border-radius:14px;border:1px solid var(--border);background:#fff;outline:none;font-size:14px}
+    .field input:focus{border-color:rgba(255,140,0,.6);box-shadow:0 0 0 4px rgba(255,140,0,.14)}
+    .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .action-btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:14px;border:1px solid var(--border);background:#111;color:#fff;font-weight:900;cursor:pointer}
+    .action-btn.secondary{background:#fff;color:#111}
+    .action-btn.secondary:hover{background:#fafafa}
+    .small-note{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.5}
 
-    footer{ padding:18px 0 40px; color:var(--muted); font-size:13px; }
-    .footer-row{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      border-top:1px solid var(--border);
-      padding-top:14px;
-    }
+    footer{padding:18px 0 40px;color:var(--muted);font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:14px}
 
-    .float-wrap{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:9998;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .float-btn{
-      width:54px; height:54px;
-      border-radius: 18px;
-      display:grid; place-items:center;
-      border:1px solid rgba(0,0,0,.10);
-      box-shadow: 0 16px 40px rgba(0,0,0,.18);
-      font-weight:900;
-      cursor:pointer;
-      user-select:none;
-    }
-    .float-btn.wa{ background: var(--whatsapp); color:#08150d; }
-    .float-btn.vb{ background: var(--viber); color:#fff; }
+    .float-wrap{position:fixed;right:16px;bottom:16px;z-index:9998;display:flex;flex-direction:column;gap:10px}
+    .float-btn{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;border:1px solid rgba(0,0,0,.10);box-shadow:0 16px 40px rgba(0,0,0,.18);font-weight:900;user-select:none}
+    .float-btn.wa{background:var(--whatsapp);color:#08150d}
+    .float-btn.vb{background:var(--viber);color:#fff}
 
-    #bestPricePopup{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,.55);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      padding:18px;
-    }
-    .popup-box{
-      width:min(520px, 100%);
-      background: var(--orange);
-      color:#111;
-      border-radius: 20px;
-      padding: 22px 18px;
-      box-shadow: 0 20px 70px rgba(0,0,0,.35);
-      border: 1px solid rgba(0,0,0,.10);
-      text-align:center;
-    }
-    .popup-box h2{ margin:0 0 8px; font-size:22px; letter-spacing:-.2px; }
-    .popup-box p{ margin:0 0 14px; color:#1b1b1b; line-height:1.45; }
-    .popup-box button{
-      border:none;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight:900;
-      background: #111;
-      color:#fff;
-      cursor:pointer;
-    }
-    .popup-box button:hover{ opacity:.92; }
+    #bestPricePopup{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:9999;padding:18px}
+    .popup-box{width:min(520px,100%);background:var(--orange);color:#111;border-radius:20px;padding:22px 18px;box-shadow:0 20px 70px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.10);text-align:center}
+    .popup-box h2{margin:0 0 8px;font-size:22px}
+    .popup-box p{margin:0 0 14px;color:#1b1b1b;line-height:1.45}
+    .popup-box button{border:none;border-radius:999px;padding:12px 18px;font-weight:900;background:#111;color:#fff;cursor:pointer}
 
     @media (max-width: 920px){
-      .grid3{ grid-template-columns: 1fr; }
-      .gallery{ grid-template-columns: 1fr; }
-      .airport{ grid-template-columns: 1fr; }
-      .airport .photo img{ height:260px; }
-      .contact-grid{ grid-template-columns: 1fr; }
-      .hero img{ height:460px; }
+      .grid3{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .airport{grid-template-columns:1fr}
+      .airport .photo img{height:260px}
+      .contact-grid{grid-template-columns:1fr}
+      .hero img{height:460px}
+      .form-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 
 <body>
-  <!-- Popup (κάθε φορά) -->
-  <div id="bestPricePopup" role="dialog" aria-modal="true" aria-label="Ενημέρωση καλύτερων τιμών">
+  <div id="bestPricePopup" role="dialog" aria-modal="true" aria-label="Μήνυμα καλύτερων τιμών">
     <div class="popup-box">
       <h2>✅ Έχουμε τις καλύτερες τιμές</h2>
-      <p>
-        Οι τιμές υπολογίζονται με βάση τη χιλιομετρική απόσταση — και είναι από τις πιο ανταγωνιστικές σε σχέση με άλλα apps.
-      </p>
+      <p>Οι τιμές υπολογίζονται με βάση τη χιλιομετρική απόσταση — και είναι από τις πιο ανταγωνιστικές σε σχέση με άλλα apps.</p>
       <button onclick="closePopup()">OK</button>
     </div>
   </div>
@@ -413,8 +164,8 @@
       <div class="brand">
         <div class="logo">T</div>
         <div>
-          <div style="font-size:15px; line-height:1;">Taxi & Fly</div>
-          <div style="font-size:12px; color:var(--muted); font-weight:700;">Αθήνα → Αεροδρόμιο (ATH)</div>
+          <div style="font-size:15px;line-height:1;">Taxi & Fly</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:800;">Αθήνα → Αεροδρόμιο (ATH)</div>
         </div>
       </div>
 
@@ -422,7 +173,7 @@
         <a href="#home">Αρχική</a>
         <a href="#services">Υπηρεσίες</a>
         <a href="#fleet">Στόλος</a>
-        <a href="#app">App</a>
+        <a href="#book">Κράτηση</a>
         <a href="#contact">Επικοινωνία</a>
       </nav>
 
@@ -433,7 +184,6 @@
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section id="home" class="hero" aria-label="Hero">
       <img src="../images%20(1).jpg" alt="Κίτρινη ταμπέλα ταξί" />
       <div class="hero-content">
@@ -441,19 +191,18 @@
           <div class="pill">📍 Όλη η Αθήνα → ATH • ⏱ 24/7 • ✅ Γρήγορη επιβεβαίωση</div>
           <h1>Μεταφορά με ταξί από όλη την Αθήνα προς το Αεροδρόμιο (ATH)</h1>
           <p class="sub">
-            Αξιόπιστη παραλαβή από <strong>οποιαδήποτε περιοχή της Αθήνας</strong> προς Ελ. Βενιζέλος (ATH).
-            Επικοινωνήστε με τηλέφωνο, WhatsApp ή Viber για άμεση επιβεβαίωση.
+            Παραλαβή από <strong>οποιαδήποτε περιοχή της Αθήνας</strong> προς Ελ. Βενιζέλος (ATH).
+            Επικοινωνία με τηλέφωνο, WhatsApp, Viber ή Email.
           </p>
           <div class="cta">
-            <a class="btn primary" href="tel:+306974450008" aria-label="Καλέστε τώρα">📞 Κλήση</a>
-            <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">💬 WhatsApp</a>
-            <a class="btn vb" href="viber://chat?number=%2B306974450008" aria-label="Viber">📣 Viber</a>
+            <a class="btn primary" href="tel:+306974450008">📞 Κλήση</a>
+            <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a class="btn vb" href="viber://chat?number=%2B306974450008">📣 Viber</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ΥΠΗΡΕΣΙΕΣ -->
     <section id="services" class="services">
       <div class="section-title">
         <div>
@@ -463,80 +212,52 @@
       </div>
 
       <div class="grid3">
-        <div class="card">
-          <div class="card-pad">
-            <div class="row">
-              <div class="icon">⏱</div>
-              <div>
-                <h3>Έγκαιρη παραλαβή</h3>
-                <p>Οργανώνουμε την παραλαβή με βάση ώρα & τοποθεσία για να είστε πάντα στην ώρα σας.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card"><div class="card-pad"><div class="row">
+          <div class="icon">⏱</div><div><h3>Έγκαιρη παραλαβή</h3><p>Οργάνωση με βάση ώρα & τοποθεσία.</p></div>
+        </div></div></div>
 
-        <div class="card">
-          <div class="card-pad">
-            <div class="row">
-              <div class="icon">🌙</div>
-              <div>
-                <h3>Διαθεσιμότητα 24/7</h3>
-                <p>Πρωινές πτήσεις ή αργά βράδια — είμαστε διαθέσιμοι όλο το 24ωρο.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card"><div class="card-pad"><div class="row">
+          <div class="icon">🌙</div><div><h3>Διαθεσιμότητα 24/7</h3><p>Πρωί/βράδυ — είμαστε διαθέσιμοι.</p></div>
+        </div></div></div>
 
-        <div class="card">
-          <div class="card-pad">
-            <div class="row">
-              <div class="icon">✅</div>
-              <div>
-                <h3>Απλή κράτηση</h3>
-                <p>Στείλτε διεύθυνση + ώρα. Επιβεβαιώνουμε γρήγορα με κλήση, WhatsApp ή Viber.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="card"><div class="card-pad"><div class="row">
+          <div class="icon">✅</div><div><h3>Απλή κράτηση</h3><p>Διεύθυνση + ώρα και επιβεβαιώνουμε άμεσα.</p></div>
+        </div></div></div>
       </div>
     </section>
 
-    <!-- ΑΕΡΟΔΡΟΜΙΟ -->
     <section aria-label="Airport section">
       <div class="section-title">
         <div>
           <h2>Αεροδρόμιο Αθηνών (ATH)</h2>
-          <p>Ελ. Βενιζέλος — ο προορισμός σας. Αναλαμβάνουμε τη μεταφορά Αθήνα → αεροδρόμιο.</p>
+          <p>Ελ. Βενιζέλος — ο προορισμός. Αναλαμβάνουμε τη μεταφορά Αθήνα → αεροδρόμιο.</p>
         </div>
       </div>
 
       <div class="airport">
         <div class="photo">
-          <img src="../athens-international-airport.jpg" alt="Αεροδρόμιο Αθηνών Ελευθέριος Βενιζέλος" />
+          <img src="../athens-international-airport.jpg" alt="Αεροδρόμιο Αθηνών Ελ. Βενιζέλος" />
         </div>
 
         <div class="card">
           <div class="card-pad">
             <h3 style="margin-top:0;">Πώς γίνεται</h3>
-            <p style="margin:0 0 12px; color:var(--muted);">
+            <p style="margin:0 0 12px;color:var(--muted);">
               1) Κλήση ή μήνυμα<br />
               2) Στείλτε διεύθυνση + ώρα (πτήση προαιρετικά)<br />
-              3) Επιβεβαιώνουμε και ερχόμαστε για παραλαβή
+              3) Επιβεβαιώνουμε και ερχόμαστε
             </p>
-
             <div class="contact-actions">
               <a class="btn call" href="tel:+306974450008">📞 Κλήση</a>
               <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
               <a class="btn vb" href="viber://chat?number=%2B306974450008">📣 Viber</a>
             </div>
-
-            <p class="hint">Tip: Αποθηκεύστε το τηλέφωνό μας για πιο γρήγορη κράτηση.</p>
+            <p class="small-note">Email: <a href="mailto:taxiandfly@gmail.com">taxiandfly@gmail.com</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ΣΤΟΛΟΣ -->
     <section id="fleet" aria-label="Fleet gallery">
       <div class="section-title">
         <div>
@@ -546,50 +267,59 @@
       </div>
 
       <div class="gallery">
-        <figure>
-          <img src="../images%20(2).jpg" alt="Σειρά κίτρινων ταξί" />
-          <figcaption class="caption">Επαγγελματική εξυπηρέτηση • Αθήνα → ATH</figcaption>
-        </figure>
-
-        <figure>
-          <img src="../images%20(3).jpg" alt="Κίτρινο ταξί" />
-          <figcaption class="caption">Άνετη διαδρομή • Γρήγορη επιβεβαίωση</figcaption>
-        </figure>
-
-        <figure>
-          <img src="../images%20(1).jpg" alt="Ταμπέλα ταξί" />
-          <figcaption class="caption">Διαθεσιμότητα 24/7</figcaption>
-        </figure>
+        <figure><img src="../images%20(2).jpg" alt="Σειρά κίτρινων ταξί" /><figcaption class="caption">Επαγγελματική εξυπηρέτηση • Αθήνα → ATH</figcaption></figure>
+        <figure><img src="../images%20(3).jpg" alt="Κίτρινο ταξί" /><figcaption class="caption">Άνετη διαδρομή • Γρήγορη επιβεβαίωση</figcaption></figure>
+        <figure><img src="../images%20(1).jpg" alt="Ταμπέλα ταξί" /><figcaption class="caption">Διαθεσιμότητα 24/7</figcaption></figure>
       </div>
     </section>
 
-    <!-- APP -->
-    <section id="app" aria-label="App section">
+    <!-- BOOKING FORM (EMAIL) -->
+    <section id="book" aria-label="Booking form">
       <div class="section-title">
         <div>
-          <h2>Κατεβάστε το App</h2>
-          <p>Το link του Google Play θα προστεθεί σύντομα. Το App Store αργότερα.</p>
+          <h2>Γρήγορη Κράτηση (Email)</h2>
+          <p>Συμπλήρωσε τα στοιχεία και πάτα “Αποστολή Email”. Θα ανοίξει έτοιμο email στο κινητό/υπολογιστή.</p>
         </div>
       </div>
 
       <div class="card">
         <div class="card-pad">
-          <div class="app-row">
-            <a class="store-btn disabled" href="#" onclick="return false;" aria-disabled="true" title="Σύντομα διαθέσιμο">
-              ▶ Google Play (σύντομα)
-            </a>
-            <a class="store-btn disabled" href="#" onclick="return false;" aria-disabled="true" title="Θα προστεθεί αργότερα">
-               App Store (αργότερα)
-            </a>
+          <div class="form-grid">
+            <div class="field">
+              <label for="bName">Ονοματεπώνυμο</label>
+              <input id="bName" placeholder="Το όνομά σας" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="bPhone">Τηλέφωνο</label>
+              <input id="bPhone" placeholder="+30..." autocomplete="tel" />
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="bAddress">Διεύθυνση Παραλαβής (Αθήνα)</label>
+              <input id="bAddress" placeholder="Οδός, περιοχή, ξενοδοχείο κλπ." autocomplete="street-address" />
+            </div>
+            <div class="field">
+              <label for="bTime">Ημερομηνία & Ώρα Παραλαβής</label>
+              <input id="bTime" type="datetime-local" />
+            </div>
+            <div class="field">
+              <label for="bNotes">Σημειώσεις (προαιρετικό)</label>
+              <input id="bNotes" placeholder="Αριθμός πτήσης, αποσκευές, επιβάτες..." />
+            </div>
           </div>
-          <div class="hint">
-            Μέχρι να μπουν τα links, η κράτηση γίνεται άμεσα μέσω Κλήσης / WhatsApp / Viber.
+
+          <div class="form-actions">
+            <a id="sendEmailBtn" class="action-btn" href="#">✉ Αποστολή Email</a>
+            <button id="copyMsgBtn" class="action-btn secondary" type="button">Αντιγραφή μηνύματος</button>
+          </div>
+
+          <div class="small-note">
+            Προορισμός πάντα: <strong>Αεροδρόμιο Αθηνών (ATH)</strong>.<br>
+            Email προς: <strong>taxiandfly@gmail.com</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ΕΠΙΚΟΙΝΩΝΙΑ -->
     <section id="contact" aria-label="Contact">
       <div class="section-title">
         <div>
@@ -599,41 +329,38 @@
       </div>
 
       <div class="contact-grid">
-        <div class="card">
-          <div class="card-pad">
-            <h3 style="margin-top:0;">Taxi & Fly</h3>
-            <p style="margin:0; color:var(--muted); line-height:1.6;">
-              <strong>Εξυπηρέτηση:</strong> Όλη η Αθήνα → Αεροδρόμιο Αθηνών (ATH)<br />
-              <strong>Ωράριο:</strong> 24/7<br />
-              <strong>Τηλέφωνο:</strong> <a href="tel:+306974450008">+30 697 445 0008</a>
-            </p>
+        <div class="card"><div class="card-pad">
+          <h3 style="margin-top:0;">Taxi & Fly</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.6;">
+            <strong>Εξυπηρέτηση:</strong> Όλη η Αθήνα → Αεροδρόμιο Αθηνών (ATH)<br />
+            <strong>Ωράριο:</strong> 24/7<br />
+            <strong>Τηλέφωνο:</strong> <a href="tel:+306974450008">+30 697 445 0008</a><br />
+            <strong>Email:</strong> <a href="mailto:taxiandfly@gmail.com">taxiandfly@gmail.com</a>
+          </p>
 
-            <div class="contact-actions" style="margin-top:12px;">
-              <a class="btn call" href="tel:+306974450008">📞 Κλήση</a>
-              <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
-              <a class="btn vb" href="viber://chat?number=%2B306974450008">📣 Viber</a>
-            </div>
+          <div class="contact-actions" style="margin-top:12px;">
+            <a class="btn call" href="tel:+306974450008">📞 Κλήση</a>
+            <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a class="btn vb" href="viber://chat?number=%2B306974450008">📣 Viber</a>
+            <a class="btn" href="mailto:taxiandfly@gmail.com?subject=Κράτηση%20Ταξί">✉ Email</a>
           </div>
-        </div>
+        </div></div>
 
-        <div class="card">
-          <div class="card-pad">
-            <h3 style="margin-top:0;">Έτοιμο μήνυμα</h3>
-            <p style="margin:0; color:var(--muted); line-height:1.6;">
-              Στείλτε: <br />
-              <strong>Διεύθυνση παραλαβής</strong> + <strong>ώρα</strong> + (προαιρετικά) <strong>αριθμό πτήσης</strong>.
-            </p>
-            <p class="hint" style="margin-top:10px;">
-              Επιβεβαιώνουμε γρήγορα διαθεσιμότητα και λεπτομέρειες παραλαβής.
-            </p>
-          </div>
-        </div>
+        <div class="card"><div class="card-pad">
+          <h3 style="margin-top:0;">Tip για γρήγορη κράτηση</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.6;">
+            Στείλτε: <strong>διεύθυνση παραλαβής</strong> + <strong>ημερομηνία/ώρα</strong> + (προαιρετικά) <strong>αριθμό πτήσης</strong>.
+          </p>
+          <p class="small-note" style="margin-top:10px;">
+            Επιβεβαιώνουμε γρήγορα διαθεσιμότητα και λεπτομέρειες παραλαβής.
+          </p>
+        </div></div>
       </div>
 
       <footer>
         <div class="footer-row">
           <div>© <span id="y"></span> Taxi & Fly • taxiandfly.com</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
             <a href="/">English</a>
             <a href="#home">Πάνω</a>
           </div>
@@ -642,25 +369,72 @@
     </section>
   </main>
 
-  <!-- Floating buttons -->
   <div class="float-wrap" aria-label="Floating contact buttons">
-    <a class="float-btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">
-      WA
-    </a>
-    <a class="float-btn vb" href="viber://chat?number=%2B306974450008" aria-label="Viber">
-      VB
-    </a>
+    <a class="float-btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+    <a class="float-btn vb" href="viber://chat?number=%2B306974450008" aria-label="Viber">VB</a>
   </div>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const BOOKING_EMAIL = "taxiandfly@gmail.com";
+    document.getElementById("y").textContent = new Date().getFullYear();
 
     function closePopup(){
-      var el = document.getElementById('bestPricePopup');
-      if(el) el.style.display = 'none';
+      const el = document.getElementById("bestPricePopup");
+      if(el) el.style.display = "none";
     }
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape') closePopup();
+    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closePopup(); });
+
+    function formatDateTimeLocal(val){
+      if(!val) return "";
+      const d = new Date(val);
+      if (isNaN(d.getTime())) return val;
+      return d.toLocaleString("el-GR");
+    }
+
+    function buildBookingMessage(){
+      const name = (document.getElementById("bName").value || "").trim() || "—";
+      const phone = (document.getElementById("bPhone").value || "").trim() || "—";
+      const address = (document.getElementById("bAddress").value || "").trim() || "—";
+      const time = formatDateTimeLocal(document.getElementById("bTime").value);
+      const notes = (document.getElementById("bNotes").value || "").trim() || "—";
+
+      return `Γεια σας Taxi & Fly,
+Θα ήθελα κράτηση ταξί για μεταφορά από Αθήνα προς Αεροδρόμιο Αθηνών (ATH).
+
+Ονοματεπώνυμο: ${name}
+Τηλέφωνο: ${phone}
+Διεύθυνση Παραλαβής (Αθήνα): ${address}
+Ημερομηνία & Ώρα Παραλαβής: ${time || "—"}
+Σημειώσεις: ${notes}
+
+Ευχαριστώ!`;
+    }
+
+    function refreshEmailLink(){
+      const subject = "Κράτηση Ταξί - Αθήνα προς Αεροδρόμιο (ATH)";
+      const body = buildBookingMessage();
+      const href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      document.getElementById("sendEmailBtn").href = href;
+    }
+
+    ["input","change"].forEach(evt=>{
+      ["bName","bPhone","bAddress","bTime","bNotes"].forEach(id=>{
+        document.getElementById(id).addEventListener(evt, refreshEmailLink);
+      });
+    });
+    refreshEmailLink();
+
+    document.getElementById("copyMsgBtn").addEventListener("click", async ()=>{
+      const msg = buildBookingMessage();
+      try{
+        await navigator.clipboard.writeText(msg);
+        const btn = document.getElementById("copyMsgBtn");
+        const old = btn.textContent;
+        btn.textContent = "Αντιγράφηκε ✓";
+        setTimeout(()=> btn.textContent = old, 1400);
+      }catch(e){
+        alert("Δεν υποστηρίζεται η αντιγραφή σε αυτόν τον browser.");
+      }
     });
   </script>
 </body>
