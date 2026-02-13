@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taxi & Fly — Athens Airport Taxi Transfers (ATH)</title>
+<title>Taxi & Fly — Athens to Airport Taxi Transfers (ATH)</title>
 
 <link rel="canonical" href="https://taxiandfly.com/">
 <link rel="alternate" hreflang="en" href="https://taxiandfly.com/">
 <link rel="alternate" hreflang="el" href="https://taxiandfly.com/gr/">
 <link rel="alternate" hreflang="x-default" href="https://taxiandfly.com/">
 
-<meta name="description" content="Athens airport taxi transfers (ATH). 24/7 service, instant confirmation via phone, WhatsApp or Viber. Competitive distance-based rates.">
+<meta name="description" content="Athens to Athens International Airport (ATH) taxi transfers. 24/7 service, instant confirmation via phone, WhatsApp or Viber. Competitive distance-based rates.">
 
 <meta property="og:site_name" content="Taxi & Fly">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Athens Airport Taxi Transfers (ATH) | Taxi & Fly">
-<meta property="og:description" content="24/7 Athens ↔ Airport transfers. Instant booking via phone, WhatsApp or Viber.">
+<meta property="og:title" content="Athens to Airport Taxi Transfers (ATH) | Taxi & Fly">
+<meta property="og:description" content="24/7 transfers from anywhere in Athens to Athens International Airport (ATH). Book instantly by phone, WhatsApp or Viber.">
 <meta property="og:url" content="https://taxiandfly.com/">
 <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg">
 
@@ -27,7 +27,8 @@
   "url":"https://taxiandfly.com/",
   "telephone":"+306974450008",
   "areaServed":"Athens, Greece",
-  "availableLanguage":["en","el"]
+  "availableLanguage":["en","el"],
+  "serviceType":"Taxi transfer from Athens to Athens International Airport (ATH)"
 }
 </script>
 
@@ -149,6 +150,35 @@
     .fab{display:none}
     body{padding-bottom:92px}
   }
+
+  /* FORM */
+  .formGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  @media(max-width:900px){
+    .formGrid{grid-template-columns:1fr;}
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .field span{
+    font-weight:900;
+    font-size:13px;
+    opacity:.9;
+  }
+  .field input{
+    padding:12px 12px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
+  }
+  .field input::placeholder{color:rgba(255,255,255,.55)}
 </style>
 </head>
 
@@ -161,7 +191,7 @@
     <nav class="navlinks" id="navlinks">
       <a href="#home">Home</a>
       <a href="#how">How it works</a>
-      <a href="#routes">Instant Quote</a>
+      <a href="#quote">Get Quote</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="tel:+306974450008" class="navcall">Call</a>
@@ -183,8 +213,8 @@
     <div class="heroOverlay"></div>
     <div class="heroContent">
       <div class="heroBox">
-        <div class="heroTitle">Athens Airport Taxi Transfers (ATH)</div>
-        <div class="heroSub">24/7 service • Instant confirmation via phone, WhatsApp or Viber</div>
+        <div class="heroTitle">Athens → Airport Taxi Transfers (ATH)</div>
+        <div class="heroSub">From anywhere in Athens to Athens International Airport • 24/7 • Instant confirmation</div>
 
         <div class="btnRow">
           <a class="btn btnCall" href="tel:+306974450008">Call Now</a>
@@ -193,9 +223,9 @@
         </div>
 
         <div class="badges">
+          <div class="badge">Athens → Airport only</div>
           <div class="badge">Distance-based pricing</div>
-          <div class="badge">Instant quote before pickup</div>
-          <div class="badge">Competitive rates</div>
+          <div class="badge">Quote before pickup</div>
         </div>
       </div>
     </div>
@@ -207,7 +237,7 @@
     <div class="bannerOverlay"></div>
     <div class="bannerText">
       <div>
-        <h2>Athens Airport Transfers (ATH)</h2>
+        <h2>Transfers to Athens Airport (ATH)</h2>
         <p>Pickup anywhere in Athens • On-time arrival • 24/7</p>
       </div>
     </div>
@@ -217,12 +247,12 @@
   <section id="how" class="section">
     <div class="grid">
       <div class="card">
-        <b>1) Contact us</b>
-        <p class="muted">Send pickup location, date/time and flight number.</p>
+        <b>1) Send pickup details</b>
+        <p class="muted">Pickup address, date/time, and (optional) flight number.</p>
       </div>
       <div class="card">
-        <b>2) We confirm instantly</b>
-        <p class="muted">We confirm availability and a final quote before pickup.</p>
+        <b>2) Instant confirmation</b>
+        <p class="muted">We confirm availability and the final quote before pickup.</p>
       </div>
       <div class="card">
         <b>3) Ride to ATH</b>
@@ -231,39 +261,69 @@
     </div>
   </section>
 
-  <!-- Instant Quote (distance-based) + GET QUOTE -->
-  <section id="routes" class="section">
+  <!-- Quote / Form -->
+  <section id="quote" class="section">
     <div class="card">
-      <h2 style="margin:0 0 8px;">Instant quote (distance-based pricing)</h2>
+      <h2 style="margin:0 0 8px;">Get an instant quote</h2>
       <p class="muted" style="margin:0 0 14px;">
-        Prices are calculated based on distance and pickup time. We confirm the final quote before pickup.
-        Competitive rates compared to many taxi apps.
+        Pricing is based on distance and pickup time. We confirm the final quote before pickup.
       </p>
 
       <div class="grid">
         <div class="card">
-          <b>Airport transfer</b>
-          <p class="muted">Athens → ATH / ATH → Athens</p>
+          <b>Service area</b>
+          <p class="muted">Anywhere in Athens</p>
         </div>
         <div class="card">
-          <b>Any pickup area</b>
-          <p class="muted">Center • Piraeus • Glyfada • Kifisia • Anywhere</p>
+          <b>Destination</b>
+          <p class="muted">Athens International Airport (ATH)</p>
         </div>
         <div class="card">
-          <b>24/7 service</b>
-          <p class="muted">Instant confirmation by phone/WhatsApp/Viber</p>
+          <b>Support</b>
+          <p class="muted">Phone • WhatsApp • Viber</p>
         </div>
       </div>
 
-      <div class="center" style="margin-top:12px;">
-        <a class="btn btnWA" id="waQuote" target="_blank" rel="noopener">Get Quote on WhatsApp</a>
-        <a class="btn btnViber" href="viber://chat?number=%2B306974450008">Get Quote on Viber</a>
-        <button class="btn btnGhost" id="copyQuote" type="button">Copy message</button>
-      </div>
+      <div class="card" style="margin-top:14px;">
+        <h3 style="margin:0 0 10px;">Quote request</h3>
 
-      <p class="muted center" style="margin:10px 0 0;font-size:13px;">
-        Tip: include pickup address + date/time + flight number.
-      </p>
+        <div class="formGrid">
+          <label class="field">
+            <span>Pickup address</span>
+            <input id="qPickup" placeholder="e.g. Syntagma Square, Athens">
+          </label>
+
+          <label class="field">
+            <span>Date & time</span>
+            <input id="qDate" type="datetime-local">
+          </label>
+
+          <label class="field">
+            <span>Flight number (optional)</span>
+            <input id="qFlight" placeholder="e.g. A3 123">
+          </label>
+
+          <label class="field">
+            <span>Passengers</span>
+            <input id="qPax" type="number" min="1" value="1">
+          </label>
+
+          <label class="field">
+            <span>Luggage</span>
+            <input id="qLuggage" placeholder="e.g. 2 suitcases">
+          </label>
+        </div>
+
+        <div class="btnRow" style="margin-top:12px;">
+          <a class="btn btnWA" id="waQuote" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <a class="btn btnViber" href="viber://chat?number=%2B306974450008">Open Viber</a>
+          <button class="btn btnGhost" id="copyQuote" type="button">Copy message</button>
+        </div>
+
+        <p class="muted" style="margin:10px 0 0;font-size:13px;">
+          Tip: We confirm the final quote before pickup.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -276,7 +336,7 @@
       <div class="card">
         <b>Fast booking</b>
         <p class="muted">Direct confirmation (phone/WhatsApp/Viber).</p>
-        <p class="muted">Athens ↔ ATH • 24/7</p>
+        <p class="muted">Athens → ATH • 24/7</p>
       </div>
     </div>
   </section>
@@ -308,12 +368,12 @@
     <h2 style="margin:0 0 12px;">FAQ</h2>
     <div style="display:grid;gap:12px;">
       <details>
-        <summary>How do I book?</summary>
-        <p>Send your pickup location, date/time and flight number. We confirm instantly.</p>
+        <summary>Do you only offer Athens → Airport transfers?</summary>
+        <p>Yes. We provide transfers from anywhere in Athens to Athens International Airport (ATH).</p>
       </details>
       <details>
         <summary>Do you operate 24/7?</summary>
-        <p>Yes, we operate 24/7 for Athens airport transfers.</p>
+        <p>Yes, we operate 24/7.</p>
       </details>
       <details>
         <summary>How is the price calculated?</summary>
@@ -325,7 +385,7 @@
   <!-- Final CTA -->
   <section class="section">
     <div class="card center">
-      <h2 style="margin:0 0 10px;">Book your Athens Airport Taxi now</h2>
+      <h2 style="margin:0 0 10px;">Book your Athens → Airport taxi now</h2>
       <p class="muted" style="margin:0 0 14px;">Instant confirmation • Phone, WhatsApp or Viber</p>
       <div class="btnRow">
         <a class="btn btnCall" href="tel:+306974450008">Call Now</a>
@@ -365,26 +425,64 @@
     menuBtn.setAttribute("aria-expanded","false");
   }));
 
-  // WhatsApp prefilled quote + copy message (EN)
+  // WhatsApp message builder from the form + copy
   (function(){
     const phone = "306974450008";
-    const msg =
-`Hello Taxi & Fly 👋
-I would like a quote for an Athens Airport transfer (ATH).
+    const $ = (id) => document.getElementById(id);
 
-Pickup address:
-Date & time:
-Flight number:
-Passengers:
-Luggage:
+    const pickup = $("qPickup");
+    const date = $("qDate");
+    const flight = $("qFlight");
+    const pax = $("qPax");
+    const luggage = $("qLuggage");
+    const waBtn = $("waQuote");
+    const copyBtn = $("copyQuote");
+
+    function fmtDate(v){
+      if(!v) return "";
+      const d = new Date(v);
+      if (isNaN(d.getTime())) return v;
+      return d.toLocaleString("en-GB");
+    }
+
+    function buildMessage(){
+      const p = pickup?.value?.trim() || "—";
+      const dt = fmtDate(date?.value);
+      const f = flight?.value?.trim() || "—";
+      const px = pax?.value?.trim() || "1";
+      const lug = luggage?.value?.trim() || "—";
+
+      return `Hello Taxi & Fly 👋
+I would like a quote for a transfer from Athens to Athens International Airport (ATH).
+
+Pickup address: ${p}
+Date & time: ${dt || "—"}
+Flight number: ${f}
+Passengers: ${px}
+Luggage: ${lug}
 
 Thank you!`;
-    const wa = document.getElementById("waQuote");
-    if (wa) wa.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
 
-    const copyBtn = document.getElementById("copyQuote");
-    if (copyBtn) {
-      copyBtn.addEventListener("click", async () => {
+    function refresh(){
+      if(!waBtn) return;
+      const msg = buildMessage();
+      waBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+
+    ["input","change"].forEach(evt=>{
+      pickup?.addEventListener(evt, refresh);
+      date?.addEventListener(evt, refresh);
+      flight?.addEventListener(evt, refresh);
+      pax?.addEventListener(evt, refresh);
+      luggage?.addEventListener(evt, refresh);
+    });
+
+    refresh();
+
+    if(copyBtn){
+      copyBtn.addEventListener("click", async ()=>{
+        const msg = buildMessage();
         try{
           await navigator.clipboard.writeText(msg);
           copyBtn.textContent = "Copied ✓";
