@@ -10,13 +10,12 @@
 <link rel="alternate" hreflang="el" href="https://taxiandfly.com/gr/">
 <link rel="alternate" hreflang="x-default" href="https://taxiandfly.com/">
 
-<meta name="description" content="Athens airport taxi transfers (ATH). 24/7 service, instant confirmation via phone, WhatsApp or Viber. Competitive fixed prices.">
+<meta name="description" content="Athens airport taxi transfers (ATH). 24/7 service, instant confirmation via phone, WhatsApp or Viber. Competitive distance-based rates.">
 
-<!-- Open Graph -->
 <meta property="og:site_name" content="Taxi & Fly">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Athens Airport Taxi Transfers (ATH) | Taxi & Fly">
-<meta property="og:description" content="24/7 Athens → Airport taxi transfers. Instant booking via phone, WhatsApp or Viber.">
+<meta property="og:description" content="24/7 Athens ↔ Airport transfers. Instant booking via phone, WhatsApp or Viber.">
 <meta property="og:url" content="https://taxiandfly.com/">
 <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg">
 
@@ -95,31 +94,20 @@
   .center{text-align:center}
 
   /* HERO */
-  .hero{
-    position:relative;border-radius:22px;overflow:hidden;
-    border:1px solid var(--line);
-  }
+  .hero{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
   .hero img{width:100%;height:440px;object-fit:cover;display:block}
   @media(max-width:820px){.hero img{height:380px}}
   .heroOverlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.78))}
-  .heroContent{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    padding:18px;text-align:center;
-  }
+  .heroContent{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center}
   .heroBox{max-width:820px}
   .heroTitle{font-size:44px;font-weight:900;line-height:1.06;text-shadow:0 10px 30px rgba(0,0,0,.55)}
   .heroSub{margin-top:10px;font-size:18px;color:rgba(255,255,255,.9);text-shadow:0 10px 24px rgba(0,0,0,.55)}
   .btnRow{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:900;
-    border:1px solid rgba(255,255,255,.18);
-  }
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:900;border:1px solid rgba(255,255,255,.18);cursor:pointer}
   .btnCall{background:var(--call);color:#0b0c10;border-color:transparent}
   .btnWA{background:var(--wa);color:#0b0c10;border-color:transparent}
   .btnViber{background:var(--viber);color:#0b0c10;border-color:transparent}
-
-  /* Badges */
+  .btnGhost{background:rgba(255,255,255,.10);color:#fff}
   .badges{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .badge{background:rgba(255,255,255,.08);border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-weight:900;font-size:13px}
 
@@ -173,7 +161,7 @@
     <nav class="navlinks" id="navlinks">
       <a href="#home">Home</a>
       <a href="#how">How it works</a>
-      <a href="#routes">Routes & Prices</a>
+      <a href="#routes">Instant Quote</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="tel:+306974450008" class="navcall">Call</a>
@@ -205,9 +193,9 @@
         </div>
 
         <div class="badges">
-          <div class="badge">Fixed competitive prices</div>
-          <div class="badge">Airport pickup & drop-off</div>
-          <div class="badge">Clean vehicles</div>
+          <div class="badge">Distance-based pricing</div>
+          <div class="badge">Instant quote before pickup</div>
+          <div class="badge">Competitive rates</div>
         </div>
       </div>
     </div>
@@ -230,11 +218,11 @@
     <div class="grid">
       <div class="card">
         <b>1) Contact us</b>
-        <p class="muted">Call, WhatsApp or Viber and send your pickup location + flight time.</p>
+        <p class="muted">Send pickup location, date/time and flight number.</p>
       </div>
       <div class="card">
-        <b>2) Instant confirmation</b>
-        <p class="muted">We confirm the pickup time and price immediately.</p>
+        <b>2) We confirm instantly</b>
+        <p class="muted">We confirm availability and a final quote before pickup.</p>
       </div>
       <div class="card">
         <b>3) Ride to ATH</b>
@@ -243,29 +231,39 @@
     </div>
   </section>
 
-  <!-- Routes & Prices -->
+  <!-- Instant Quote (distance-based) + GET QUOTE -->
   <section id="routes" class="section">
     <div class="card">
-      <h2 style="margin:0 0 8px;">Popular routes & prices</h2>
-      <p class="muted" style="margin:0 0 14px;">Prices depend on pickup area and time. Ask for an instant quote.</p>
+      <h2 style="margin:0 0 8px;">Instant quote (distance-based pricing)</h2>
+      <p class="muted" style="margin:0 0 14px;">
+        Prices are calculated based on distance and pickup time. We confirm the final quote before pickup.
+        Competitive rates compared to many taxi apps.
+      </p>
+
       <div class="grid">
         <div class="card">
-          <b>Athens Center → ATH</b>
-          <p class="muted">From €XX</p>
+          <b>Airport transfer</b>
+          <p class="muted">Athens → ATH / ATH → Athens</p>
         </div>
         <div class="card">
-          <b>Piraeus → ATH</b>
-          <p class="muted">From €XX</p>
+          <b>Any pickup area</b>
+          <p class="muted">Center • Piraeus • Glyfada • Kifisia • Anywhere</p>
         </div>
         <div class="card">
-          <b>Glyfada → ATH</b>
-          <p class="muted">From €XX</p>
+          <b>24/7 service</b>
+          <p class="muted">Instant confirmation by phone/WhatsApp/Viber</p>
         </div>
       </div>
+
       <div class="center" style="margin-top:12px;">
-        <a class="btn btnCall" href="tel:+306974450008">Get quote by phone</a>
-        <a class="btn btnWA" href="https://wa.me/306974450008" target="_blank" rel="noopener">Get quote on WhatsApp</a>
+        <a class="btn btnWA" id="waQuote" target="_blank" rel="noopener">Get Quote on WhatsApp</a>
+        <a class="btn btnViber" href="viber://chat?number=%2B306974450008">Get Quote on Viber</a>
+        <button class="btn btnGhost" id="copyQuote" type="button">Copy message</button>
       </div>
+
+      <p class="muted center" style="margin:10px 0 0;font-size:13px;">
+        Tip: include pickup address + date/time + flight number.
+      </p>
     </div>
   </section>
 
@@ -277,8 +275,8 @@
       <div class="card"><img src="images%20(3).jpg" alt="Yellow taxi car"></div>
       <div class="card">
         <b>Fast booking</b>
-        <p class="muted">Better prices than many apps (often) with direct confirmation.</p>
-        <p class="muted">24/7 • Athens → ATH</p>
+        <p class="muted">Direct confirmation (phone/WhatsApp/Viber).</p>
+        <p class="muted">Athens ↔ ATH • 24/7</p>
       </div>
     </div>
   </section>
@@ -295,7 +293,7 @@
       <div class="card review">
         <div class="stars">★★★★★</div>
         <b>Great communication</b>
-        <div class="muted">“Booked via WhatsApp, instant confirmation and clear price.”</div>
+        <div class="muted">“Booked via WhatsApp, instant confirmation and clear quote.”</div>
       </div>
       <div class="card review">
         <div class="stars">★★★★★</div>
@@ -311,15 +309,15 @@
     <div style="display:grid;gap:12px;">
       <details>
         <summary>How do I book?</summary>
-        <p>Call, WhatsApp or Viber us with pickup location, date/time and flight details. We confirm instantly.</p>
+        <p>Send your pickup location, date/time and flight number. We confirm instantly.</p>
       </details>
       <details>
         <summary>Do you operate 24/7?</summary>
         <p>Yes, we operate 24/7 for Athens airport transfers.</p>
       </details>
       <details>
-        <summary>Are prices fixed?</summary>
-        <p>We offer competitive fixed quotes depending on pickup area and time. Ask for an instant quote.</p>
+        <summary>How is the price calculated?</summary>
+        <p>Pricing is based on distance and pickup time. We confirm the final quote before pickup.</p>
       </details>
     </div>
   </section>
@@ -343,10 +341,8 @@
 
 </div>
 
-<!-- Floating WhatsApp (desktop) -->
 <a class="fab" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 
-<!-- Sticky Mobile Contact Bar -->
 <div class="sticky-bar" role="navigation" aria-label="Contact bar">
   <a class="sticky-btn sticky-call" href="tel:+306974450008">Call</a>
   <a class="sticky-btn sticky-wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">WhatsApp</a>
@@ -368,6 +364,37 @@
     menuBtn.textContent = "☰";
     menuBtn.setAttribute("aria-expanded","false");
   }));
+
+  // WhatsApp prefilled quote + copy message (EN)
+  (function(){
+    const phone = "306974450008";
+    const msg =
+`Hello Taxi & Fly 👋
+I would like a quote for an Athens Airport transfer (ATH).
+
+Pickup address:
+Date & time:
+Flight number:
+Passengers:
+Luggage:
+
+Thank you!`;
+    const wa = document.getElementById("waQuote");
+    if (wa) wa.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+
+    const copyBtn = document.getElementById("copyQuote");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        try{
+          await navigator.clipboard.writeText(msg);
+          copyBtn.textContent = "Copied ✓";
+          setTimeout(()=> copyBtn.textContent = "Copy message", 1600);
+        }catch(e){
+          alert("Copy is not supported in this browser.");
+        }
+      });
+    }
+  })();
 </script>
 
 </body>
