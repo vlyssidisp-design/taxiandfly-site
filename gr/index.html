@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taxi & Fly — Μεταφορές Ταξί Αεροδρομίου Αθηνών (ATH)</title>
+<title>Taxi & Fly — Αθήνα προς Αεροδρόμιο (ATH) Μεταφορές Ταξί</title>
 
 <link rel="canonical" href="https://taxiandfly.com/gr/">
 <link rel="alternate" hreflang="en" href="https://taxiandfly.com/">
 <link rel="alternate" hreflang="el" href="https://taxiandfly.com/gr/">
 <link rel="alternate" hreflang="x-default" href="https://taxiandfly.com/">
 
-<meta name="description" content="Μεταφορές ταξί προς Αεροδρόμιο Αθηνών (ATH). 24/7 εξυπηρέτηση, άμεση επιβεβαίωση με τηλέφωνο, WhatsApp ή Viber. Ανταγωνιστικές τιμές βάσει απόστασης.">
+<meta name="description" content="Μεταφορές ταξί από όλη την Αθήνα προς Αεροδρόμιο Αθηνών (ATH). 24/7 εξυπηρέτηση, άμεση επιβεβαίωση με τηλέφωνο, WhatsApp ή Viber. Τιμολόγηση βάσει απόστασης.">
 
 <meta property="og:site_name" content="Taxi & Fly">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Μεταφορές Ταξί Αεροδρομίου Αθηνών (ATH) | Taxi & Fly">
-<meta property="og:description" content="24/7 μεταφορές προς/από ATH. Άμεση κράτηση με τηλέφωνο, WhatsApp ή Viber.">
+<meta property="og:title" content="Αθήνα προς Αεροδρόμιο (ATH) Μεταφορές Ταξί | Taxi & Fly">
+<meta property="og:description" content="24/7 μεταφορές από όλη την Αθήνα προς ATH. Άμεση κράτηση με τηλέφωνο, WhatsApp ή Viber.">
 <meta property="og:url" content="https://taxiandfly.com/gr/">
 <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg">
 
@@ -115,6 +115,35 @@
     .fab{display:none}
     body{padding-bottom:92px}
   }
+
+  /* FORM */
+  .formGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+  @media(max-width:900px){
+    .formGrid{grid-template-columns:1fr;}
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .field span{
+    font-weight:900;
+    font-size:13px;
+    opacity:.9;
+  }
+  .field input{
+    padding:12px 12px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
+  }
+  .field input::placeholder{color:rgba(255,255,255,.55)}
 </style>
 </head>
 
@@ -127,7 +156,7 @@
     <nav class="navlinks" id="navlinks">
       <a href="#home">Αρχική</a>
       <a href="#how">Πώς δουλεύει</a>
-      <a href="#routes">Άμεση Προσφορά</a>
+      <a href="#quote">Προσφορά</a>
       <a href="#reviews">Κριτικές</a>
       <a href="#faq">FAQ</a>
       <a href="tel:+306974450008" class="navcall">Κλήση</a>
@@ -148,8 +177,8 @@
     <div class="heroOverlay"></div>
     <div class="heroContent">
       <div class="heroBox">
-        <div class="heroTitle">Μεταφορές Ταξί Αεροδρομίου Αθηνών (ATH)</div>
-        <div class="heroSub">24/7 εξυπηρέτηση • Άμεση επιβεβαίωση με τηλέφωνο, WhatsApp ή Viber</div>
+        <div class="heroTitle">Αθήνα → Αεροδρόμιο (ATH) Μεταφορά Ταξί</div>
+        <div class="heroSub">Από όλη την Αθήνα προς Αεροδρόμιο Αθηνών • 24/7 • Άμεση επιβεβαίωση</div>
 
         <div class="btnRow">
           <a class="btn btnCall" href="tel:+306974450008">Κάλεσε τώρα</a>
@@ -158,9 +187,9 @@
         </div>
 
         <div class="badges">
+          <div class="badge">Μόνο Αθήνα → Αεροδρόμιο</div>
           <div class="badge">Τιμολόγηση βάσει απόστασης</div>
           <div class="badge">Προσφορά πριν την παραλαβή</div>
-          <div class="badge">Ανταγωνιστικές τιμές</div>
         </div>
       </div>
     </div>
@@ -180,53 +209,82 @@
   <section id="how" class="section">
     <div class="grid">
       <div class="card">
-        <b>1) Επικοινωνία</b>
-        <p class="muted">Στείλε διεύθυνση, ημερομηνία/ώρα και αριθμό πτήσης.</p>
+        <b>1) Στείλε στοιχεία παραλαβής</b>
+        <p class="muted">Διεύθυνση, ημερομηνία/ώρα και (προαιρετικά) αριθμό πτήσης.</p>
       </div>
       <div class="card">
         <b>2) Άμεση επιβεβαίωση</b>
         <p class="muted">Επιβεβαιώνουμε διαθεσιμότητα και τελική προσφορά πριν την παραλαβή.</p>
       </div>
       <div class="card">
-        <b>3) Μεταφορά στο ATH</b>
+        <b>3) Διαδρομή προς ATH</b>
         <p class="muted">Επαγγελματίας οδηγός, καθαρό ταξί, άνετη & ασφαλής διαδρομή.</p>
       </div>
     </div>
   </section>
 
-  <section id="routes" class="section">
+  <section id="quote" class="section">
     <div class="card">
-      <h2 style="margin:0 0 8px;">Άμεση προσφορά (τιμολόγηση με βάση απόσταση)</h2>
+      <h2 style="margin:0 0 8px;">Πάρε άμεση προσφορά</h2>
       <p class="muted" style="margin:0 0 14px;">
-        Οι τιμές προκύπτουν από τη χιλιομετρική απόσταση και την ώρα παραλαβής.
-        Σου δίνουμε την τελική προσφορά πριν την παραλαβή.
-        Ανταγωνιστικές τιμές σε σχέση με πολλά taxi apps.
+        Η τιμή προκύπτει από την απόσταση και την ώρα παραλαβής. Σου δίνουμε τελική προσφορά πριν την παραλαβή.
       </p>
 
       <div class="grid">
         <div class="card">
-          <b>Μεταφορά αεροδρομίου</b>
-          <p class="muted">Αθήνα → ATH / ATH → Αθήνα</p>
+          <b>Περιοχή εξυπηρέτησης</b>
+          <p class="muted">Από όλη την Αθήνα</p>
         </div>
         <div class="card">
-          <b>Παραλαβή από παντού</b>
-          <p class="muted">Κέντρο • Πειραιάς • Γλυφάδα • Κηφισιά • Παντού</p>
+          <b>Προορισμός</b>
+          <p class="muted">Αεροδρόμιο Αθηνών (ATH)</p>
         </div>
         <div class="card">
-          <b>24/7 εξυπηρέτηση</b>
-          <p class="muted">Άμεση επιβεβαίωση με τηλέφωνο/WhatsApp/Viber</p>
+          <b>Επικοινωνία</b>
+          <p class="muted">Τηλέφωνο • WhatsApp • Viber</p>
         </div>
       </div>
 
-      <div class="center" style="margin-top:12px;">
-        <a class="btn btnWA" id="waQuote" target="_blank" rel="noopener">Προσφορά στο WhatsApp</a>
-        <a class="btn btnViber" href="viber://chat?number=%2B306974450008">Προσφορά στο Viber</a>
-        <button class="btn btnGhost" id="copyQuote" type="button">Αντιγραφή μηνύματος</button>
-      </div>
+      <div class="card" style="margin-top:14px;">
+        <h3 style="margin:0 0 10px;">Αίτημα προσφοράς</h3>
 
-      <p class="muted center" style="margin:10px 0 0;font-size:13px;">
-        Tip: γράψε διεύθυνση παραλαβής + ημερομηνία/ώρα + αριθμό πτήσης.
-      </p>
+        <div class="formGrid">
+          <label class="field">
+            <span>Διεύθυνση παραλαβής</span>
+            <input id="qPickup" placeholder="π.χ. Σύνταγμα, Αθήνα">
+          </label>
+
+          <label class="field">
+            <span>Ημερομηνία & ώρα</span>
+            <input id="qDate" type="datetime-local">
+          </label>
+
+          <label class="field">
+            <span>Αριθμός πτήσης (προαιρετικό)</span>
+            <input id="qFlight" placeholder="π.χ. A3 123">
+          </label>
+
+          <label class="field">
+            <span>Επιβάτες</span>
+            <input id="qPax" type="number" min="1" value="1">
+          </label>
+
+          <label class="field">
+            <span>Αποσκευές</span>
+            <input id="qLuggage" placeholder="π.χ. 2 βαλίτσες">
+          </label>
+        </div>
+
+        <div class="btnRow" style="margin-top:12px;">
+          <a class="btn btnWA" id="waQuote" target="_blank" rel="noopener">Αποστολή στο WhatsApp</a>
+          <a class="btn btnViber" href="viber://chat?number=%2B306974450008">Άνοιγμα Viber</a>
+          <button class="btn btnGhost" id="copyQuote" type="button">Αντιγραφή μηνύματος</button>
+        </div>
+
+        <p class="muted" style="margin:10px 0 0;font-size:13px;">
+          Tip: Σου δίνουμε τελική προσφορά πριν την παραλαβή.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -238,7 +296,7 @@
       <div class="card">
         <b>Γρήγορη κράτηση</b>
         <p class="muted">Άμεση επιβεβαίωση (τηλέφωνο/WhatsApp/Viber).</p>
-        <p class="muted">Αθήνα ↔ ATH • 24/7</p>
+        <p class="muted">Αθήνα → ATH • 24/7</p>
       </div>
     </div>
   </section>
@@ -268,12 +326,12 @@
     <h2 style="margin:0 0 12px;">FAQ</h2>
     <div style="display:grid;gap:12px;">
       <details>
-        <summary>Πώς κάνω κράτηση;</summary>
-        <p>Στείλε διεύθυνση, ημερομηνία/ώρα και αριθμό πτήσης. Επιβεβαιώνουμε άμεσα.</p>
+        <summary>Εξυπηρετείτε μόνο Αθήνα → Αεροδρόμιο;</summary>
+        <p>Ναι. Κάνουμε μεταφορές από όλη την Αθήνα προς Αεροδρόμιο Αθηνών (ATH).</p>
       </details>
       <details>
         <summary>Εξυπηρετείτε 24/7;</summary>
-        <p>Ναι, δουλεύουμε 24/7 για μεταφορές προς/από το αεροδρόμιο.</p>
+        <p>Ναι, δουλεύουμε 24/7.</p>
       </details>
       <details>
         <summary>Πώς υπολογίζεται η τιμή;</summary>
@@ -284,7 +342,7 @@
 
   <section class="section">
     <div class="card center">
-      <h2 style="margin:0 0 10px;">Κλείσε τώρα μεταφορά προς ATH</h2>
+      <h2 style="margin:0 0 10px;">Κλείσε τώρα Αθήνα → ATH</h2>
       <p class="muted" style="margin:0 0 14px;">Άμεση επιβεβαίωση • Τηλέφωνο, WhatsApp ή Viber</p>
       <div class="btnRow">
         <a class="btn btnCall" href="tel:+306974450008">Κάλεσε τώρα</a>
@@ -324,26 +382,64 @@
     menuBtn.setAttribute("aria-expanded","false");
   }));
 
-  // WhatsApp prefilled quote + copy message (GR)
+  // WhatsApp message builder from the form + copy (GR)
   (function(){
     const phone = "306974450008";
-    const msg =
-`Γεια σας Taxi & Fly 👋
-Θα ήθελα μια προσφορά για μεταφορά προς Αεροδρόμιο (ATH).
+    const $ = (id) => document.getElementById(id);
 
-Διεύθυνση παραλαβής:
-Ημερομηνία & ώρα:
-Αριθμός πτήσης:
-Επιβάτες:
-Αποσκευές:
+    const pickup = $("qPickup");
+    const date = $("qDate");
+    const flight = $("qFlight");
+    const pax = $("qPax");
+    const luggage = $("qLuggage");
+    const waBtn = $("waQuote");
+    const copyBtn = $("copyQuote");
+
+    function fmtDate(v){
+      if(!v) return "";
+      const d = new Date(v);
+      if (isNaN(d.getTime())) return v;
+      return d.toLocaleString("el-GR");
+    }
+
+    function buildMessage(){
+      const p = pickup?.value?.trim() || "—";
+      const dt = fmtDate(date?.value);
+      const f = flight?.value?.trim() || "—";
+      const px = pax?.value?.trim() || "1";
+      const lug = luggage?.value?.trim() || "—";
+
+      return `Γεια σας Taxi & Fly 👋
+Θα ήθελα μια προσφορά για μεταφορά από Αθήνα προς Αεροδρόμιο Αθηνών (ATH).
+
+Διεύθυνση παραλαβής: ${p}
+Ημερομηνία & ώρα: ${dt || "—"}
+Αριθμός πτήσης: ${f}
+Επιβάτες: ${px}
+Αποσκευές: ${lug}
 
 Ευχαριστώ!`;
-    const wa = document.getElementById("waQuote");
-    if (wa) wa.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
 
-    const copyBtn = document.getElementById("copyQuote");
-    if (copyBtn) {
-      copyBtn.addEventListener("click", async () => {
+    function refresh(){
+      if(!waBtn) return;
+      const msg = buildMessage();
+      waBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+
+    ["input","change"].forEach(evt=>{
+      pickup?.addEventListener(evt, refresh);
+      date?.addEventListener(evt, refresh);
+      flight?.addEventListener(evt, refresh);
+      pax?.addEventListener(evt, refresh);
+      luggage?.addEventListener(evt, refresh);
+    });
+
+    refresh();
+
+    if(copyBtn){
+      copyBtn.addEventListener("click", async ()=>{
+        const msg = buildMessage();
         try{
           await navigator.clipboard.writeText(msg);
           copyBtn.textContent = "Αντιγράφηκε ✓";
