@@ -3,385 +3,529 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Taxi & Fly | Athens → Airport Taxi (ATH)</title>
-  <meta name="description" content="Taxi transfers from all Athens areas to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance." />
+  <title>Taxi & Fly — Athens → Airport (ATH) Taxi Transfers</title>
+  <meta name="description" content="Taxi transfer from anywhere in Athens to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance. Best prices." />
   <link rel="canonical" href="https://taxiandfly.com/" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Taxi & Fly | Athens → Airport Taxi (ATH)" />
-  <meta property="og:description" content="Athens → Airport taxi transfers. Appointment only — book 4 hours in advance." />
+  <meta property="og:title" content="Taxi & Fly — Athens → Airport (ATH) Taxi Transfers" />
+  <meta property="og:description" content="Taxi transfer from anywhere in Athens to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance. Best prices." />
   <meta property="og:url" content="https://taxiandfly.com/" />
   <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg" />
 
+  <!-- Schema (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "Taxi & Fly",
+    "url": "https://taxiandfly.com/",
+    "areaServed": "Athens, Greece",
+    "telephone": "+306974450008",
+    "email": "taxiandfly@gmail.com",
+    "description": "Taxi transfers from all areas of Athens to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance."
+  }
+  </script>
+
   <style>
     :root{
-      --bg1:#fff7eb; --bg2:#ffffff;
-      --text:#121212; --muted:#5a5a5a;
-      --card:#ffffff; --border:rgba(0,0,0,.10);
-      --shadow:0 18px 60px rgba(0,0,0,.10);
-      --accent:#ff9800; --wa:#25D366; --viber:#7360f2;
-      --max:1120px; --r:18px;
+      --bg1:#fff7e6;
+      --bg2:#ffffff;
+      --card:#ffffff;
+      --text:#1a1a1a;
+      --muted:#5a5a5a;
+      --line:rgba(0,0,0,.08);
+      --shadow:0 18px 45px rgba(0,0,0,.10);
+      --yellow:#ffd200;
+      --wa:#25D366;
+      --viber:#7360f2;
+      --orange:#ff8a00;
+      --radius:18px;
+      --max:1120px;
     }
 
     *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      background: radial-gradient(900px 420px at 20% 10%, #ffe3b3, transparent 60%),
-                  radial-gradient(800px 420px at 80% 20%, #ffd7a6, transparent 55%),
+      background: radial-gradient(1000px 500px at 20% 0%, rgba(255,138,0,.18), transparent 50%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(255,210,0,.22), transparent 55%),
                   linear-gradient(180deg, var(--bg1), var(--bg2));
     }
-    a{color:inherit}
-    img{max-width:100%; height:auto; display:block}
-
-    .wrap{max-width:var(--max); margin:0 auto; padding:16px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px}
     .topbar{
-      position:sticky; top:0; z-index:20;
-      background:rgba(255,255,255,.78);
-      backdrop-filter:blur(10px);
-      border:1px solid var(--border);
-      border-radius:999px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
-      padding:10px 12px;
       display:flex; align-items:center; justify-content:space-between;
-      gap:10px; flex-wrap:wrap;
+      gap:12px; padding:14px 16px; background:rgba(255,255,255,.85);
+      border:1px solid var(--line); border-radius:999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      backdrop-filter: blur(8px);
+      position:sticky; top:10px; z-index:50;
     }
-    .brand{font-weight:900; padding-left:6px}
-    .brand small{display:block; font-weight:700; color:var(--muted)}
-    .nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .brand small{font-weight:700;color:var(--muted)}
+    .nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+    .pill{
+      padding:10px 12px; border-radius:999px; border:1px solid var(--line);
+      background:#fff; font-weight:700; font-size:14px;
+    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;
-      text-decoration:none;
-      font-weight:900;
-      box-shadow:0 10px 26px rgba(0,0,0,.06);
-      white-space:nowrap;
+      padding:10px 14px; border-radius:999px; border:1px solid transparent;
+      font-weight:800; font-size:14px; cursor:pointer;
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+      transition: transform .08s ease;
+      user-select:none;
     }
-    .btn.primary{background:var(--accent); border-color:transparent}
-    .btn.wa{background:var(--wa); border-color:transparent; color:#06240f}
-    .btn.viber{background:var(--viber); border-color:transparent; color:#fff}
-    .lang{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:#fff;
-      text-decoration:none;
-      font-weight:900;
-    }
-
-    .hero{
-      margin-top:14px;
-      border-radius:calc(var(--r) + 10px);
-      overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      position:relative;
-      background:#000;
-      min-height:420px;
-    }
-    .hero img{width:100%; height:420px; object-fit:cover; opacity:.92}
-    .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.65))}
-    .heroContent{
-      position:absolute; inset:0;
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      gap:12px;
-      padding:22px;
-      color:#fff;
-      text-align:center;
-    }
-    h1{
-      margin:0;
-      font-size:clamp(26px, 5.6vw, 44px);
-      letter-spacing:.2px;
-      text-shadow:0 12px 30px rgba(0,0,0,.35);
-    }
-    .sub{
-      margin:0;
-      max-width:920px;
-      font-size:clamp(14px, 3.8vw, 18px);
-      line-height:1.55;
-      color:rgba(255,255,255,.92);
-    }
-    .notice{
-      background:rgba(255,152,0,.18);
-      border:1px solid rgba(255,152,0,.35);
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:900;
-      max-width:920px;
-    }
-    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
-
-    .grid3{
-      margin-top:14px;
+    .btn:active{transform: translateY(1px)}
+    .btn-call{background:var(--yellow)}
+    .btn-wa{background:var(--wa); color:#0b2b14}
+    .btn-viber{background:var(--viber); color:#fff}
+    .btn-ghost{background:#fff;border-color:var(--line);box-shadow:none;font-weight:800}
+    .grid{
       display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:12px;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      margin-top:18px;
+      align-items:stretch;
     }
-    .info{
-      grid-column:span 4;
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+      .topbar{border-radius:20px}
+    }
+
+    .heroCard{
       background:rgba(255,255,255,.85);
-      border:1px solid var(--border);
-      border-radius:var(--r);
-      box-shadow:0 14px 40px rgba(0,0,0,.08);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero{
+      position:relative;
+      height:340px;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+      background:#ddd;
+    }
+    .hero img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.02);
+    }
+    .hero .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.55));
+    }
+    .hero .content{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
+      color:#fff;
+    }
+    .hero h1{margin:0;font-size: clamp(26px, 4vw, 40px); font-weight:900}
+    .hero p{margin:8px 0 0; color:rgba(255,255,255,.92); font-weight:700}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{
+      padding:8px 10px;border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.22);
+      font-weight:800;font-size:13px;
+    }
+
+    .cardBody{padding:16px}
+    .notice{
+      background: rgba(255,138,0,.10);
+      border:1px solid rgba(255,138,0,.25);
+      border-radius: 14px;
+      padding:12px 12px;
+      font-weight:800;
+      color:#7a3c00;
+    }
+    .section{
+      background:rgba(255,255,255,.88);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding:16px;
     }
-    .info h3{margin:0 0 8px; font-size:16px}
-    .info p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
-
-    .section{
-      margin-top:16px;
-      background:rgba(255,255,255,.80);
-      border:1px solid var(--border);
-      border-radius:calc(var(--r) + 10px);
-      box-shadow:0 14px 44px rgba(0,0,0,.08);
-      padding:18px;
+    .section h2{margin:0 0 10px; font-size:22px}
+    .muted{color:var(--muted); font-weight:650; line-height:1.35}
+    .kpi{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px
     }
-    .section h2{margin:0 0 10px; font-size:20px}
-    .section p{margin:0; color:var(--muted); line-height:1.6}
-
-    .form{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:10px;
+    @media (max-width: 520px){
+      .kpi{grid-template-columns:1fr}
     }
-    .field{grid-column:span 6}
-    .field.full{grid-column:span 12}
-    label{display:block; font-weight:900; font-size:13px; margin-bottom:6px}
-    input{
+    .kpi .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+    }
+    .box b{display:block;margin-bottom:6px}
+
+    .formRow{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
+    @media (max-width: 620px){ .formRow{grid-template-columns:1fr} }
+    input, textarea, select{
       width:100%;
       padding:12px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-size:16px; /* IMPORTANT for iOS zoom */
+      border-radius: 12px;
+      border:1px solid var(--line);
+      font-size:16px;
       outline:none;
-    }
-    .submitRow{grid-column:span 12; display:flex; gap:10px; flex-wrap:wrap; margin-top:2px}
-    .note{grid-column:span 12; color:var(--muted); font-size:13px; line-height:1.5}
-
-    .areasGrid{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:10px;
-    }
-    .cardLink{
-      display:block;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid var(--border);
       background:#fff;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-      text-decoration:none;
-      font-weight:900;
     }
-    .cardLink:hover{background:#fafafa}
+    input:focus, textarea:focus{
+      border-color: rgba(255,138,0,.55);
+      box-shadow: 0 0 0 3px rgba(255,138,0,.18);
+    }
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .result{
+      margin-top:10px;
+      padding:12px;
+      border-radius:14px;
+      border:1px dashed rgba(0,0,0,.18);
+      background: rgba(255,255,255,.75);
+      font-weight:850;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 820px){ .gallery{grid-template-columns:1fr} }
+    .photo{
+      border-radius: 16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#f2f2f2;
+      min-height:180px;
+    }
+    .photo img{width:100%; height:220px; object-fit:cover; display:block}
 
     footer{
-      margin:18px 0 26px;
+      margin:18px 0 8px;
+      color:rgba(0,0,0,.55);
+      font-weight:700;
       text-align:center;
-      color:var(--muted);
-      font-size:13px;
     }
 
     /* Floating buttons */
-    .fab{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:60;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .floatStack{
+      position:fixed; right:16px; bottom:16px;
+      display:flex; flex-direction:column; gap:10px;
+      z-index:80;
     }
-    .fab a{
-      width:56px; height:56px;
+    .floatBtn{
+      display:flex; align-items:center; justify-content:center;
+      width:54px; height:54px;
       border-radius:999px;
-      display:grid; place-items:center;
-      text-decoration:none;
-      border:1px solid rgba(0,0,0,.12);
-      box-shadow:0 18px 44px rgba(0,0,0,.20);
+      box-shadow: 0 18px 40px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(6px);
+      font-size:14px;
       font-weight:900;
     }
-    .fab .wa{background:var(--wa); color:#05310f}
-    .fab .viber{background:var(--viber); color:#fff}
+    .floatWa{background:var(--wa); color:#0b2b14}
+    .floatViber{background:var(--viber); color:#fff}
+    .floatCall{background:var(--yellow); color:#111}
 
-    /* Mobile adjustments */
-    @media (max-width: 900px){
-      .info{grid-column:span 12}
-      .hero img{height:460px}
-      .field{grid-column:span 12}
-      .btn{padding:10px 12px}
+    /* Popup */
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center; justify-content:center;
+      background: rgba(0,0,0,.45);
+      z-index:100;
+      padding:18px;
     }
+    .modal.show{display:flex}
+    .modalCard{
+      width:min(540px, 100%);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,138,0,.98), rgba(255,138,0,.92));
+      color:#fff;
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.25);
+      padding:16px;
+    }
+    .modalCard h3{margin:0 0 8px; font-size:22px; font-weight:950}
+    .modalCard p{margin:0; font-weight:800; line-height:1.35; opacity:.98}
+    .modalTop{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+      margin-bottom:10px;
+    }
+    .xBtn{
+      background: rgba(255,255,255,.20);
+      border:1px solid rgba(255,255,255,.28);
+      color:#fff;
+      border-radius: 12px;
+      padding:8px 10px;
+      font-weight:950;
+      cursor:pointer;
+    }
+    .hint{font-size:12px; opacity:.95; margin-top:8px; font-weight:800}
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <header class="topbar">
       <div class="brand">
-        Taxi & Fly
-        <small>Athens → Airport (ATH)</small>
+        Taxi & Fly <small>• Athens → Airport (ATH)</small>
       </div>
 
       <nav class="nav">
-        <a class="btn primary" href="tel:+306974450008">📞 Call</a>
-        <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
-        <a class="btn viber" href="viber://chat?number=%2B306974450008">📱 Viber</a>
-        <a class="btn" href="/landing/">Areas</a>
-        <a class="lang" href="/gr/">GR</a>
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#distance">Distance</a>
+        <a class="pill" href="#fleet">Fleet</a>
+        <a class="pill" href="#contact">Contact</a>
+        <a class="pill" href="/gr/">GR</a>
+
+        <a class="btn btn-call" href="tel:+306974450008">📞 Call</a>
+        <a class="btn btn-wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn btn-viber" href="viber://chat?number=%2B306974450008">📩 Viber</a>
       </nav>
     </header>
 
-    <section class="hero" id="home">
-      <img src="/images%20(1).jpg" alt="Yellow taxi in Athens" />
-      <div class="overlay"></div>
+    <div class="grid">
+      <!-- HERO -->
+      <div class="heroCard">
+        <div class="hero">
+          <img src="images%20(1).jpg" alt="Taxi & Fly — Athens to Airport" />
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="badge">24/7 by appointment</div>
+            <h1>Athens → Airport Taxi Transfers</h1>
+            <p>Pick-up from any area in Athens to Athens International Airport (ATH). Fast confirmation.</p>
+            <div class="badges">
+              <div class="badge">Best prices</div>
+              <div class="badge">Reliable drivers</div>
+              <div class="badge">Easy booking</div>
+            </div>
+          </div>
+        </div>
 
-      <div class="heroContent">
-        <h1>Athens → Airport Taxi (ATH)</h1>
-        <p class="sub">
-          Taxi transfers from <b>all Athens areas</b> to Athens International Airport (ATH).
-          Prices are distance-based — and we keep them competitive.
+        <div class="cardBody">
+          <div class="notice">
+            Appointment only — please book at least <b>4 hours</b> in advance. Service is <b>Athens → Airport (ATH)</b> only.
+          </div>
+
+          <div class="kpi">
+            <div class="box">
+              <b>Quick contact</b>
+              Call, WhatsApp or Viber for instant confirmation.
+            </div>
+            <div class="box">
+              <b>From all Athens</b>
+              We pick up from any address within Athens.
+            </div>
+            <div class="box">
+              <b>Distance calculator</b>
+              Check kilometers to ATH (no price shown).
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: DISTANCE + CONTACT -->
+      <aside class="section" id="distance">
+        <h2>Distance to Athens Airport (ATH)</h2>
+        <p class="muted">
+          Enter your pick-up address (Athens). We will calculate the driving distance to ATH in kilometers.
         </p>
-        <div class="notice">Appointment only — booking required at least <b>4 hours</b> in advance</div>
 
-        <div class="heroCtas">
-          <a class="btn primary" href="tel:+306974450008">Call now</a>
-          <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn viber" href="viber://chat?number=%2B306974450008">Viber</a>
+        <div class="formRow">
+          <div>
+            <label class="muted" for="addr"><b>Pick-up address</b></label>
+            <input id="addr" type="text" placeholder="e.g. Ermou 10, Athens" autocomplete="street-address" />
+          </div>
+          <div>
+            <label class="muted" for="when"><b>Pick-up time</b> (optional)</label>
+            <input id="when" type="datetime-local" />
+          </div>
         </div>
+
+        <div class="actions">
+          <button class="btn btn-call" id="calcBtn" type="button">📍 Calculate km</button>
+          <a class="btn btn-ghost" href="#contact">Contact us</a>
+        </div>
+
+        <div class="result" id="resultBox" style="display:none;"></div>
+
+        <hr style="border:none;border-top:1px solid var(--line); margin:14px 0;">
+
+        <h2 id="services">What we offer</h2>
+        <ul class="muted" style="margin:0; padding-left:18px;">
+          <li>Athens pick-up → Athens International Airport (ATH)</li>
+          <li>Appointment only — book at least 4 hours in advance</li>
+          <li>Support via phone, WhatsApp and Viber</li>
+        </ul>
+
+        <div style="margin-top:12px;" class="muted">
+          Email: <b>taxiandfly@gmail.com</b><br>
+          Phone: <b>+30 697 445 0008</b>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FLEET -->
+    <section class="section" id="fleet" style="margin-top:18px;">
+      <h2>Our Taxi Fleet</h2>
+      <p class="muted">Yellow taxi service. Clean vehicles. Professional drivers.</p>
+      <div class="gallery">
+        <div class="photo"><img src="images%20(2).jpg" alt="Yellow taxis" /></div>
+        <div class="photo"><img src="images%20(3).jpg" alt="Yellow taxi" /></div>
+        <div class="photo"><img src="athens-international-airport.jpg" alt="Athens International Airport" /></div>
       </div>
     </section>
 
-    <section class="grid3" id="benefits">
-      <div class="info">
-        <h3>⏱️ On-time pickup</h3>
-        <p>We plan pickup times to help you arrive comfortably for your flight.</p>
+    <!-- CONTACT -->
+    <section class="section" id="contact" style="margin-top:18px;">
+      <h2>Contact</h2>
+      <p class="muted">
+        Send us your address + time. We confirm availability quickly.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-call" href="tel:+306974450008">📞 Call</a>
+        <a class="btn btn-wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn btn-viber" href="viber://chat?number=%2B306974450008">📩 Viber</a>
+        <a class="btn btn-ghost" href="mailto:taxiandfly@gmail.com">✉️ Email</a>
       </div>
-      <div class="info">
-        <h3>📍 From all Athens areas</h3>
-        <p>Center + North/South/East/West suburbs. Athens → Airport only.</p>
+
+      <hr style="border:none;border-top:1px solid var(--line); margin:14px 0;">
+
+      <h2>Download App</h2>
+      <p class="muted">Google Play link will be added soon. App Store link later.</p>
+      <div class="actions">
+        <button class="btn btn-ghost" type="button" disabled>Google Play (soon)</button>
+        <button class="btn btn-ghost" type="button" disabled>App Store (soon)</button>
       </div>
-      <div class="info">
-        <h3>✅ Simple process</h3>
-        <p>Send name + phone + address + time. Quick confirmation by phone/WhatsApp.</p>
-      </div>
-    </section>
-
-    <section class="section" id="booking">
-      <h2>Quick Booking</h2>
-      <p>Fill the form and it will open your email app with the details pre-filled.</p>
-
-      <form class="form" id="bookingForm">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
-        </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+30…" required />
-        </div>
-        <div class="field full">
-          <label for="address">Pickup address (Athens)</label>
-          <input id="address" name="address" autocomplete="street-address" placeholder="Street, number, area" required />
-        </div>
-        <div class="field">
-          <label for="time">Pickup time</label>
-          <input id="time" name="time" placeholder="e.g. 18:30" required />
-        </div>
-        <div class="field">
-          <label for="date">Pickup date (optional)</label>
-          <input id="date" name="date" placeholder="e.g. 14 Feb" />
-        </div>
-
-        <div class="submitRow">
-          <button class="btn primary" type="submit">Send</button>
-          <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">Send via WhatsApp</a>
-        </div>
-
-        <div class="note">
-          Reminder: bookings must be made <b>at least 4 hours in advance</b>.
-        </div>
-      </form>
-    </section>
-
-    <section class="section" id="areas">
-      <h2>Service Areas → Airport (ATH)</h2>
-      <p>Choose your pickup area:</p>
-      <div class="areasGrid" id="areasGrid"></div>
-      <p style="margin-top:12px"><a class="btn" href="/landing/">View all areas</a></p>
     </section>
 
     <footer>
-      © <span id="y"></span> Taxi & Fly • <a href="mailto:taxiandfly@gmail.com">taxiandfly@gmail.com</a>
+      <span id="y"></span> © Taxi &amp; Fly • taxiandfly.com
     </footer>
   </div>
 
-  <!-- Floating -->
-  <div class="fab" aria-label="Contact buttons">
-    <a class="wa" href="https://wa.me/306974450008" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
-    <a class="viber" href="viber://chat?number=%2B306974450008" aria-label="Viber">VB</a>
+  <!-- Floating buttons -->
+  <div class="floatStack" aria-label="Quick actions">
+    <a class="floatBtn floatCall" href="tel:+306974450008" title="Call">📞</a>
+    <a class="floatBtn floatWa" href="https://wa.me/306974450008" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+    <a class="floatBtn floatViber" href="viber://chat?number=%2B306974450008" title="Viber">📩</a>
+  </div>
+
+  <!-- Popup -->
+  <div class="modal" id="priceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modalCard">
+      <div class="modalTop">
+        <div>
+          <h3 id="modalTitle">Best Prices</h3>
+          <p>We offer the best prices compared to other apps.</p>
+          <div class="hint">Appointment only — book at least 4 hours in advance.</div>
+        </div>
+        <button class="xBtn" id="closeModal" type="button">Close ✕</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // ============ CONFIG ============
+    // Paste your OpenRouteService key here (do NOT share publicly)
+    const ORS_API_KEY = "YOUR_ORS_API_KEY";
 
-    // Booking form -> mailto (works on mobile + desktop)
-    document.getElementById("bookingForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const address = document.getElementById("address").value.trim();
-      const time = document.getElementById("time").value.trim();
-      const date = document.getElementById("date").value.trim();
+    // Athens International Airport (ATH) approx coordinates:
+    const ATH = { lat: 37.9364, lon: 23.9445 };
 
-      const subject = encodeURIComponent("Taxi & Fly — Booking request (Athens → Airport)");
-      const body = encodeURIComponent(
-        "Booking request:\n" +
-        "Name: " + name + "\n" +
-        "Phone: " + phone + "\n" +
-        "Pickup address (Athens): " + address + "\n" +
-        "Pickup time: " + time + "\n" +
-        (date ? ("Pickup date: " + date + "\n") : "") +
-        "\nNote: Appointment only — at least 4 hours in advance."
-      );
+    // ============ HELPERS ============
+    const $ = (id) => document.getElementById(id);
 
-      window.location.href = "mailto:taxiandfly@gmail.com?subject=" + subject + "&body=" + body;
+    function showResult(html, isError=false){
+      const box = $("resultBox");
+      box.style.display = "block";
+      box.style.borderColor = isError ? "rgba(200,0,0,.25)" : "rgba(0,0,0,.18)";
+      box.innerHTML = html;
+    }
+
+    async function geocodeAddress(address){
+      // Nominatim (OpenStreetMap) — free with rate limits
+      const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" + encodeURIComponent(address);
+      const res = await fetch(url, { headers: { "Accept": "application/json" } });
+      const data = await res.json();
+      if(!data || !data[0]) throw new Error("Address not found. Try a more specific address.");
+      return { lat: parseFloat(data[0].lat), lon: parseFloat(data[0].lon), display: data[0].display_name };
+    }
+
+    async function getDrivingDistanceKm(startLon, startLat, endLon, endLat){
+      // ORS Directions API (driving-car)
+      const url = `https://api.openrouteservice.org/v2/directions/driving-car?start=${startLon},${startLat}&end=${endLon},${endLat}`;
+
+      const res = await fetch(url, {
+        headers: {
+          "Accept": "application/json",
+          "Authorization": ORS_API_KEY
+        }
+      });
+
+      if(!res.ok){
+        const txt = await res.text().catch(()=> "");
+        throw new Error("Distance service error. Check your ORS API key. " + (txt ? "(" + txt.slice(0,120) + "…)" : ""));
+      }
+
+      const data = await res.json();
+      const meters = data?.features?.[0]?.properties?.segments?.[0]?.distance;
+      if(typeof meters !== "number") throw new Error("Could not calculate distance. Please try again.");
+      return meters / 1000;
+    }
+
+    // ============ EVENTS ============
+    $("calcBtn").addEventListener("click", async () => {
+      const address = $("addr").value.trim();
+      if(!address){
+        showResult("Please enter a pick-up address in Athens.", true);
+        return;
+      }
+      if(ORS_API_KEY === "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjY1NzZjOGUyOTAxYjQxMDNhZmFkZTQ2YTU5ZTM0ZjhiIiwiaCI6Im11cm11cjY0In0="){
+        showResult("Please add your OpenRouteService API key in the code (ORS_API_KEY).", true);
+        return;
+      }
+
+      $("calcBtn").disabled = true;
+      $("calcBtn").textContent = "Calculating…";
+
+      try{
+        const geo = await geocodeAddress(address + ", Athens, Greece");
+        const km = await getDrivingDistanceKm(geo.lon, geo.lat, ATH.lon, ATH.lat);
+        showResult(
+          `✅ <b>Distance:</b> ${km.toFixed(1)} km<br>
+           <span class="muted" style="font-weight:700;">From: ${geo.display}</span>`
+        );
+      }catch(err){
+        showResult("⚠️ " + err.message, true);
+      }finally{
+        $("calcBtn").disabled = false;
+        $("calcBtn").textContent = "📍 Calculate km";
+      }
     });
 
-    // Auto internal links (50)
-    const AREAS_EN = [
-      ["syntagma","Syntagma"],["omonia","Omonia"],["kolonaki","Kolonaki"],["pagrati","Pangrati"],["koukaki","Koukaki"],
-      ["mets","Mets"],["ilissia","Ilissia"],["zografou","Zografou"],["neos-kosmos","Neos Kosmos"],["petralona","Petralona"],
-      ["thisio","Thisio"],["gazi","Gazi"],["sepolia","Sepolia"],["kypseli","Kypseli"],["patissia","Patissia"],
-      ["galatsi","Galatsi"],["ampelokipoi","Ampelokipoi"],["goudi","Goudi"],["halandri","Halandri"],["agia-paraskevi","Agia Paraskevi"],
-      ["gerakas","Gerakas"],["pallini","Pallini"],["spata","Spata"],["paiania","Paiania"],["koropi","Koropi"],
-      ["marousi","Marousi"],["kifisia","Kifisia"],["nea-erythraia","Nea Erythraia"],["ekali","Ekali"],["psychiko","Psychiko"],
-      ["filothei","Filothei"],["peristeri","Peristeri"],["egaleo","Egaleo"],["ilion","Ilion"],["petroupoli","Petroupoli"],
-      ["haidari","Haidari"],["nikaia","Nikaia"],["keratsini","Keratsini"],["drapetsona","Drapetsona"],["piraeus","Piraeus"],
-      ["moschato","Moschato"],["kallithea","Kallithea"],["nea-smyrni","Nea Smyrni"],["paleo-faliro","Paleo Faliro"],
-      ["alimos","Alimos"],["glyfada","Glyfada"],["voula","Voula"],["vari","Vari"],["elliniko","Elliniko"],["argyroupoli","Argyroupoli"]
-    ];
+    // Popup shows every time user enters (as requested)
+    const modal = $("priceModal");
+    const close = $("closeModal");
+    window.addEventListener("load", () => modal.classList.add("show"));
+    close.addEventListener("click", () => modal.classList.remove("show"));
+    modal.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("show"); });
 
-    const grid = document.getElementById("areasGrid");
-    const frag = document.createDocumentFragment();
-    AREAS_EN.forEach(([slug, name]) => {
-      const a = document.createElement("a");
-      a.className = "cardLink";
-      a.href = `/landing/athens-airport-taxi-${slug}.html`;
-      a.textContent = `${name} → Airport`;
-      frag.appendChild(a);
-    });
-    grid.appendChild(frag);
+    // footer year
+    $("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
