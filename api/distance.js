@@ -1,32 +1,58 @@
 export default async function handler(req, res) {
 
-  try {
+  const ORS_API_KEY = process.env.ORS_API_KEY;
 
-    const response = await fetch(
+  try {
+    const { address } = req.body;
+
+    if (!address) {
+      return res.status(400).json({ error: "No address provided" });
+    }
+
+    // 1. Geocode address -> coordinates
+    const geo = await fetch(
+      `https://api.openrouteservice.org/geocode/search?api_key=${ORS_API_KEY}&text=${encodeURIComponent(address)}`
+    );
+
+    const geoData = await geo.json();
+
+    const coords = geoData.features?.[0]?.geometry?.coordinates;
+
+    if (!coords) {
+      return res.status(404).json({ error: "Address not found" });
+    }
+
+    const [lon, lat] = coords;
+
+    // ATH airport coords
+    const ATH = [23.9445, 37.9364];
+
+    // 2. Directions
+    const route = await fetch(
       "https://api.openrouteservice.org/v2/directions/driving-car",
       {
         method: "POST",
         headers: {
-          "Authorization": "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjY1NzZjOGUyOTAxYjQxMDNhZmFkZTQ2YTU5ZTM0ZjhiIiwiaCI6Im11cm11cjY0In0=",
-          "Content-Type": "application/json"
+          Authorization: ORS_API_KEY,
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           coordinates: [
-            [23.9445, 37.9364],
-            [23.7275, 37.9838]
-          ]
-        })
+            [lon, lat],
+            ATH
+          ],
+        }),
       }
     );
 
-    const data = await response.json();
+    const routeData = await route.json();
 
-    const meters = data.routes[0].summary.distance;
-    const km = (meters / 1000).toFixed(1);
+    const meters = routeData.routes[0].summary.distance;
+    const km = Math.round(meters / 100) / 10;
 
     res.status(200).json({ km });
 
-  } catch (e) {
-    res.status(500).json({ error: "distance error" });
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
   }
 }
