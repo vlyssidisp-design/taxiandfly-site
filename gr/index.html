@@ -2,43 +2,83 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taxi & Fly Μεταφορά Αθήνα Αεροδρόμιο</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Taxi & Fly – Μεταφορά Αθήνα Αεροδρόμιο</title>
 
 <style>
-body{font-family:Arial;background:#f5f5f5;margin:0;padding:0;text-align:center}
-.container{max-width:900px;margin:auto;padding:40px}
-input,button{padding:12px;font-size:16px;border-radius:8px;border:1px solid #ccc;margin:5px}
-button{background:#f4b400;border:none;color:#000;font-weight:bold;cursor:pointer}
-.result{font-size:22px;margin-top:20px}
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+}
+header{
+    background:#ffffff;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.logo{font-weight:700;font-size:22px}
+.hero{
+    text-align:center;
+    padding:90px 20px;
+    background:linear-gradient(#f8e9c9,#ffffff);
+}
+.hero h1{font-size:38px;margin-bottom:15px}
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#ffc400;
+    border-radius:8px;
+    text-decoration:none;
+    color:#000;
+    font-weight:bold;
+}
+.section{
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+footer{
+    text-align:center;
+    padding:40px;
+    background:#111;
+    color:#fff;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>Μεταφορά Taxi Αθήνα → Αεροδρόμιο</h1>
-
-<p>Μόνο με ραντεβού — κράτηση τουλάχιστον 4 ώρες πριν</p>
-
-<h2>Απόσταση έως Αεροδρόμιο (ATH)</h2>
-
-<input id="address" placeholder="Διεύθυνση παραλαβής" />
-<button onclick="calc()">Υπολογισμός km</button>
-
-<div id="result" class="result"></div>
-
-<p><a href="/">English</a></p>
+<header>
+<div class="logo">Taxi & Fly</div>
+<div>
+<a href="/" class="btn">English</a>
 </div>
+</header>
 
-<script>
-async function calc(){
-  const address=document.getElementById("address").value;
-  const r=await fetch(`/api/distance?q=${encodeURIComponent(address)}`);
-  const data=await r.json();
-  document.getElementById("result").innerHTML="Απόσταση: "+data.km+" km";
-}
-</script>
+<section class="hero">
+<h1>Μεταφορά Taxi Αθήνα → Αεροδρόμιο (ATH)</h1>
+<p>Ιδιωτικές μεταφορές από οποιαδήποτε περιοχή της Αθήνας προς το Αεροδρόμιο Αθηνών</p>
+<p><b>Μόνο με ραντεβού — κράτηση τουλάχιστον 4 ώρες πριν.</b></p>
+<a href="tel:+306974450008" class="btn">Καλέστε τώρα</a>
+</section>
+
+<section class="section">
+<h2>Γιατί να μας επιλέξετε</h2>
+<ul>
+<li>Οι καλύτερες τιμές</li>
+<li>Επαγγελματίες οδηγοί</li>
+<li>24/7 εξυπηρέτηση με ραντεβού</li>
+<li>Κρατήσεις μέσω WhatsApp & Viber</li>
+</ul>
+</section>
+
+<footer>
+Taxi & Fly • Μεταφορές Αεροδρομίου  
+<br>taxiandfly@gmail.com
+</footer>
 
 </body>
 </html>
