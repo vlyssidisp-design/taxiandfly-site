@@ -1,50 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Taxi & Fly | Athens Airport Taxi</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
-body{
-font-family:Arial;
-background:#f7f7f7;
-margin:0;
-text-align:center;
-padding:40px;
-}
+  <title>Taxi & Fly — Athens → Airport (ATH) Taxi Transfers</title>
+  <meta name="description" content="Taxi transfers from anywhere in Athens to Athens International Airport (ATH). Appointment only — please book at least 4 hours in advance. Best prices." />
+  <link rel="canonical" href="https://taxiandfly.com/" />
 
-.hero{
-max-width:900px;
-margin:auto;
-background:white;
-padding:40px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Taxi & Fly — Athens → Airport (ATH)" />
+  <meta property="og:description" content="Taxi transfers from any area in Athens to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance." />
+  <meta property="og:url" content="https://taxiandfly.com/" />
+  <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg" />
 
-h1{font-size:38px}
-a.button{
-display:inline-block;
-margin-top:20px;
-background:#ffc107;
-padding:14px 26px;
-border-radius:12px;
-text-decoration:none;
-color:black;
-font-weight:bold;
-}
-</style>
+  <!-- Basic styling -->
+  <style>
+    :root{
+      --bg1:#fff7ea;
+      --bg2:#fff1d6;
+      --card:#ffffff;
+      --text:#1b1b1b;
+      --muted:#5b5b5b;
+      --line:rgba(0,0,0,.08);
+      --shadow:0 18px 60px rgba(0,0,0,.12);
+      --radius:22px;
+
+      --yellow:#ffcc00;
+      --orange:#ff8a00;
+      --wa:#25D366;
+      --viber:#7360f2;
+      --blue:#2563eb;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, var(--bg2), transparent 60%),
+        radial-gradient(900px 700px at 90% 0%, #ffe6b3, transparent 55%),
+        linear-gradient(180deg, var(--bg1), #ffffff 45%, #ffffff);
+    }
+
+    a{color:inherit}
+    .wrap{max-width:1100px; margin:0 auto; padding:18px 16px 80px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      background:rgba(255,255,255,.7);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      backdrop-filter: blur(10px);
+      position: sticky; top:10px; z-index: 20;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800;}
+    .brand small{font-weight:600; color:var(--muted)}
+    .nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
+    .chip{
+      padding:8px 12px; border-radius:999px;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:650;
+      color:#2b2b2b;
+    }
+    .chip:hover{border-color:rgba(0,0,0,.18)}
+    .actions{display:flex; gap:8px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.08);
+      text-decoration:none;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .btn.call{background:var(--yellow)}
+    .btn.wa{background:var(--wa); color:#fff}
+    .btn.viber{background:var(--viber); color:#fff}
+    .btn.lang{background:#fff}
+    .btn:hover{filter:brightness(.98)}
+
+    .hero{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroImg{
+      position:relative;
+      min-height:320px;
+      background: #000;
+    }
+    .heroImg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.1) contrast(1.05);
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.15) 55%, rgba(0,0,0,.05));
+    }
+    .heroText{
+      position:absolute; inset:0;
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap:10px;
+      color:#fff;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      width:fit-content;
+      font-weight:750;
+    }
+    h1{margin:0; font-size:44px; line-height:1.05; letter-spacing:-.02em}
+    .sub{margin:0; font-size:15px; color:rgba(255,255,255,.92); max-width:52ch}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:13px; font-weight:750;
+      padding:6px 10px; border-radius:999px;
+      background:rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .side{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .side h2{margin:0; font-size:22px}
+    .side p{margin:0; color:var(--muted); line-height:1.5}
+    .notice{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,138,0,.25);
+      background: rgba(255,138,0,.12);
+      font-weight:800;
+    }
+    .quick{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top:4px;
+    }
+    .quick .btn{border:none}
+    .secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:#111;
+    }
+
+    section{margin-top:18px}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .mini{
+      padding:16px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .mini h3{margin:0 0 6px; font-size:18px}
+    .mini p{margin:0; color:var(--muted); line-height:1.55}
+
+    .fleet{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .fleet img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:#fff;
+      display:block;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .box{
+      padding:16px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.6}
+    .footer{
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:18px 0 0;
+    }
+
+    /* Floating buttons */
+    .floatStack{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index: 60;
+    }
+    .fab{
+      width:54px; height:54px;
+      border-radius:16px;
+      display:flex; align-items:center; justify-content:center;
+      text-decoration:none;
+      color:#111;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow: 0 14px 40px rgba(0,0,0,.18);
+      font-weight:900;
+    }
+    .fab.call{background: var(--yellow)}
+    .fab.wa{background: var(--wa); color:#fff}
+    .fab.viber{background: var(--viber); color:#fff}
+
+    /* Popup */
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center; justify-content:center;
+      padding:18px;
+      background:rgba(0,0,0,.45);
+      z-index: 80;
+    }
+    .modal.show{display:flex}
+    .modalCard{
+      width:min(520px, 100%);
+      border-radius:22px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.10);
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .modalHead{
+      padding:16px 18px;
+      background: linear-gradient(90deg, var(--orange), #ffb000);
+      color:#fff;
+      font-weight:900;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .modalBody{padding:16px 18px; color:#222; line-height:1.55}
+    .modalBody b{font-weight:900}
+    .closeBtn{
+      border:none; background:rgba(255,255,255,.18);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      width:36px; height:36px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:900;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .fleet{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+    @media (max-width: 480px){
+      h1{font-size:32px}
+      .topbar{border-radius:18px}
+      .btn{padding:10px 12px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Taxi & Fly",
+    "url": "https://taxiandfly.com/",
+    "areaServed": "Athens",
+    "description": "Taxi transfers from anywhere in Athens to Athens International Airport (ATH). Appointment only — book at least 4 hours in advance.",
+    "telephone": "+30 697 445 0008",
+    "email": "taxiandfly@gmail.com"
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Popup (shows every visit) -->
+  <div class="modal" id="bestPricesModal" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="Best prices">
+      <div class="modalHead">
+        <span>Best prices</span>
+        <button class="closeBtn" id="closeModal" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        We offer <b>the best prices</b> compared to other apps for Athens → Airport transfers.
+      </div>
+    </div>
+  </div>
 
-<div class="hero">
-<h1>Athens → Airport Taxi Transfers</h1>
-<p>Private taxi transfers from Athens to Athens International Airport (ATH). Appointment only.</p>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <span>Taxi & Fly</span>
+        <small>• Athens → Airport (ATH)</small>
+      </div>
 
-<a class="button" href="/gr/">Ελληνικά</a>
-</div>
+      <nav class="nav" aria-label="Main">
+        <a class="chip" href="#services">Services</a>
+        <a class="chip" href="#fleet">Fleet</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
 
+      <div class="actions">
+        <a class="btn call" href="tel:+306974450008">📞 Call</a>
+        <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn viber" href="viber://chat?number=%2B306974450008">Viber</a>
+        <a class="btn lang" href="/gr/">GR</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="card heroImg">
+          <img src="images%20(1).jpg" alt="Taxi & Fly — Athens Airport taxi transfers" />
+          <div class="overlay"></div>
+          <div class="heroText">
+            <div class="badge">24/7 by appointment</div>
+            <h1>Athens → Airport Taxi Transfers</h1>
+            <p class="sub">Pick-up from any area in Athens to Athens International Airport (ATH). Fast confirmation.</p>
+            <div class="tags">
+              <span class="tag">Best prices</span>
+              <span class="tag">Reliable drivers</span>
+              <span class="tag">Easy booking</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card side">
+          <h2>Quick booking</h2>
+          <p>Contact us by phone, WhatsApp or Viber. We confirm your appointment fast.</p>
+          <div class="notice">Appointment only — please book at least <b>4 hours</b> in advance. <br/>Service is <b>Athens → Airport (ATH)</b> only.</div>
+
+          <div class="quick">
+            <a class="btn call" href="tel:+306974450008">📞 Call now</a>
+            <a class="btn wa" href="https://wa.me/306974450008" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn viber" href="viber://chat?number=%2B306974450008">Viber</a>
+            <a class="btn secondary" href="#contact">Contact details</a>
+          </div>
+
+          <p style="margin-top:6px; font-size:13px; color:var(--muted)">
+            Email: <b>taxiandfly@gmail.com</b><br/>
+            Phone: <b>+30 697 445 0008</b>
+          </p>
+        </aside>
+      </div>
+
+      <section id="services">
+        <div class="grid3">
+          <div class="mini">
+            <h3>From all Athens</h3>
+            <p>We pick up from any neighborhood in Athens and take you directly to ATH.</p>
+          </div>
+          <div class="mini">
+            <h3>Appointment only</h3>
+            <p>Please book at least <b>4 hours</b> in advance to guarantee availability.</p>
+          </div>
+          <div class="mini">
+            <h3>Fast confirmation</h3>
+            <p>Contact via phone / WhatsApp / Viber and we confirm quickly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="fleet" class="card" style="padding:16px;">
+        <h2 style="margin:0 0 12px;">Our Taxi Fleet</h2>
+        <div class="fleet">
+          <img src="images%20(2).jpg" alt="Yellow taxi fleet in Athens" />
+          <img src="images%20(3).jpg" alt="Yellow taxi vehicle" />
+          <img src="athens-international-airport.jpg" alt="Athens International Airport (ATH)" />
+        </div>
+        <p style="margin:10px 0 0; color:var(--muted); line-height:1.6;">
+          Yellow taxi service for Athens → Airport transfers.
+        </p>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div class="box">
+            <h2 style="margin:0 0 8px;">Contact</h2>
+            <ul class="list">
+              <li><b>Phone:</b> <a href="tel:+306974450008">+30 697 445 0008</a></li>
+              <li><b>WhatsApp:</b> <a href="https://wa.me/306974450008" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+              <li><b>Viber:</b> <a href="viber://chat?number=%2B306974450008">Chat on Viber</a></li>
+              <li><b>Email:</b> <a href="mailto:taxiandfly@gmail.com">taxiandfly@gmail.com</a></li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h2 style="margin:0 0 8px;">Important</h2>
+            <ul class="list">
+              <li>Service is <b>Athens → Airport (ATH)</b> only.</li>
+              <li>Appointment only — <b>minimum 4 hours</b> notice.</li>
+              <li>Best prices compared to other apps (no fixed price; depends on distance).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © <span id="y"></span> Taxi & Fly • taxiandfly.com
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating buttons -->
+  <div class="floatStack" aria-label="Quick contact">
+    <a class="fab call" href="tel:+306974450008" title="Call">📞</a>
+    <a class="fab wa" href="https://wa.me/306974450008" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+    <a class="fab viber" href="viber://chat?number=%2B306974450008" title="Viber">📩</a>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Show popup EVERY visit (no localStorage)
+    const modal = document.getElementById("bestPricesModal");
+    const close = document.getElementById("closeModal");
+
+    function openModal(){
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+    }
+    function closeModal(){
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    }
+    close.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+
+    openModal();
+  </script>
 </body>
 </html>
