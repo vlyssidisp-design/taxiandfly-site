@@ -8,14 +8,12 @@
   <meta name="description" content="Μεταφορά με ταξί από οποιαδήποτε περιοχή της Αθήνας προς Αεροδρόμιο Αθηνών (ATH). Μόνο με ραντεβού — κράτηση τουλάχιστον 4 ώρες πριν. Καλύτερες τιμές." />
   <link rel="canonical" href="https://taxiandfly.com/gr/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Taxi & Fly — Αθήνα → Αεροδρόμιο (ATH)" />
   <meta property="og:description" content="Μεταφορά με ταξί από όλη την Αθήνα προς Αεροδρόμιο Αθηνών (ATH). Μόνο με ραντεβού — τουλάχιστον 4 ώρες πριν." />
   <meta property="og:url" content="https://taxiandfly.com/gr/" />
   <meta property="og:image" content="https://taxiandfly.com/images%20(1).jpg" />
 
-  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -45,11 +43,10 @@
       --wa:#25D366;
       --viber:#7360f2;
     }
-
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
         radial-gradient(1200px 800px at 18% 10%, var(--bg2), transparent 60%),
@@ -71,15 +68,12 @@
     }
     .brand{display:flex;align-items:center;gap:10px;font-weight:900}
     .brand small{font-weight:700;color:var(--muted)}
-
     .nav{display:flex;gap:8px;flex-wrap:wrap}
     .chip{
       padding:8px 12px;border-radius:999px;
       border:1px solid var(--line);
-      background:#fff;
-      text-decoration:none;
-      font-weight:750;
-      font-size:14px;
+      background:#fff;text-decoration:none;
+      font-weight:750;font-size:14px;
     }
 
     .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -87,8 +81,7 @@
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 14px;border-radius:999px;
       border:1px solid rgba(0,0,0,.08);
-      text-decoration:none;font-weight:900;
-      white-space:nowrap;
+      text-decoration:none;font-weight:900;white-space:nowrap;
     }
     .btn.call{background:var(--yellow)}
     .btn.wa{background:var(--wa);color:#fff;border-color:transparent}
@@ -114,14 +107,12 @@
     .heroImg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1) contrast(1.06)}
     .overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.15) 55%, rgba(0,0,0,.06))}
     .heroText{
-      position:absolute;inset:0;
-      padding:22px;
+      position:absolute;inset:0;padding:22px;
       display:flex;flex-direction:column;justify-content:flex-end;gap:10px;
       color:#fff;
     }
     .badge{
-      width:fit-content;
-      padding:6px 10px;border-radius:999px;
+      width:fit-content;padding:6px 10px;border-radius:999px;
       background:rgba(255,255,255,.14);
       border:1px solid rgba(255,255,255,.22);
       font-weight:850;font-size:13px;
@@ -143,9 +134,7 @@
       padding:12px 14px;border-radius:16px;
       border:1px solid rgba(255,138,0,.25);
       background:rgba(255,138,0,.12);
-      font-weight:900;
-      color:#7a3c00;
-      line-height:1.4;
+      font-weight:900;color:#7a3c00;line-height:1.4;
     }
     .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:2px}
     .btn.secondary{background:#fff;border:1px solid var(--line);color:#111}
@@ -198,8 +187,7 @@
     .modal.show{display:flex}
     .modalCard{
       width:min(520px,100%);
-      border-radius:22px;
-      background:#fff;
+      border-radius:22px;background:#fff;
       border:1px solid rgba(0,0,0,.10);
       box-shadow:0 30px 100px rgba(0,0,0,.35);
       overflow:hidden;
@@ -207,8 +195,7 @@
     .modalHead{
       padding:16px 18px;
       background:linear-gradient(90deg, var(--orange), #ffb000);
-      color:#fff;
-      font-weight:950;
+      color:#fff;font-weight:950;
       display:flex;align-items:center;justify-content:space-between;gap:12px;
     }
     .modalBody{padding:16px 18px;color:#222;line-height:1.55;font-weight:750}
@@ -286,6 +273,7 @@
         <aside class="card side">
           <h2>Άμεση επικοινωνία</h2>
           <p>Καλέστε ή στείλτε WhatsApp/Viber. Επιβεβαιώνουμε γρήγορα το ραντεβού.</p>
+
           <div class="notice">
             Μόνο με ραντεβού — κράτηση τουλάχιστον <b>4 ώρες</b> πριν.<br/>
             Εξυπηρετούμε <b>Αθήνα → Αεροδρόμιο (ATH)</b> μόνο.
@@ -374,7 +362,6 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Popup every visit
     const modal = document.getElementById("bestPricesModal");
     const close = document.getElementById("closeModal");
     function openModal(){ modal.classList.add("show"); modal.setAttribute("aria-hidden","false"); }
